@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="rental_concept" id="BF0EADC5-5D98-0C4A-3FAA-3E119B8FDDEF" version="3.5">
+<createdBy>oem</createdBy>
+<createdTime>2026-04-20 18:24:18 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>BF0EADC5-5D98-0C4A-3FAA-3E119B8FDDEF</designId>
+</OSDM_Design>
