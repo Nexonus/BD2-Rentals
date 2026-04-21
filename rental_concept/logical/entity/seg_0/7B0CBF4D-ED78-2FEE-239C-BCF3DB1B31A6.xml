@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7B0CBF4D-ED78-2FEE-239C-BCF3DB1B31A6" name="Zakup_Sprzętu">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:49:42 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_Zakupu" id="9A53B1E9-2C76-719F-EE15-55ED15156E0D">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:52:14 UTC</createdTime>
+<notes><![CDATA[ID dla sprzętu rowerowego, który może zostać zakupiony przez klienta.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Transakcji" id="F4BABBB5-46CF-F60B-1A36-A625E85830F1">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:50:47 UTC</createdTime>
+<notes><![CDATA[ID dla transakcji powiązanej z wynajmem roweru. Zakładamy, że klient wynajmując rower może dokonać dodatkowego (opcjonalnego) zakupu, np. kasku rowerowego.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Produktu" id="7040B71A-AB6D-91AD-975E-CFED86CFD5B0">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:50:58 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Ilość" id="25AB3CFC-330A-4707-C9DB-DEEE96EBA0C1">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 21:04:46 UTC</createdTime>
+<notes><![CDATA[Ile produktów danego typu sprzedano.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Cena_Sprzedaży" id="62F047D9-1A6B-0C80-42B8-E7313C2A092F">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:51:45 UTC</createdTime>
+<notes><![CDATA[Historyczny rekord sprzedaży produktu danego dnia o danej cenie.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,10,4</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Transakcji1" id="88AB4EEA-7B3F-9290-033D-D715E409A0E4">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 21:27:53 UTC</createdTime>
+<generatorID>FDC81387-D8E4-E595-F4BE-114F672EFC3E</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>C3AF6FB4-BD83-41EA-110C-1BD47776A549</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="11934BCD-53BC-F963-76BF-CB733EBDD6A7" name="Zakup_Sprzętu PK">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:52:58 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9A53B1E9-2C76-719F-EE15-55ED15156E0D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

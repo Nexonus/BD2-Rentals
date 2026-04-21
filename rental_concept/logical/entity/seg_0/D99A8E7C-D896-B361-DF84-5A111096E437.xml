@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D99A8E7C-D896-B361-DF84-5A111096E437" name="bike">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D99A8E7C-D896-B361-DF84-5A111096E437" name="Rower">
 <createdBy>alexd</createdBy>
 <createdTime>2026-04-21 14:38:10 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
@@ -11,26 +11,102 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<synonym>Produkt</synonym>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="bike_id" id="3468E73B-36C8-6247-8E84-62D7DD03F934">
+<Attribute name="ID_Roweru" id="3468E73B-36C8-6247-8E84-62D7DD03F934">
 <createdBy>alexd</createdBy>
 <createdTime>2026-04-21 14:38:24 UTC</createdTime>
+<notes><![CDATA[Identyfikatory rowerów, może być INTEGER]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="bike_name" id="0118F538-3D2A-FA66-278A-40629CB9F3AB">
-<createdBy>alexd</createdBy>
-<createdTime>2026-04-21 14:38:44 UTC</createdTime>
+<Attribute name="Typ_Roweru" id="8D5F057D-4DAB-2131-A00C-01DB4E66B211">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 19:49:31 UTC</createdTime>
+<notes><![CDATA[Przykładowe typy rowerów:
+- Trekkingowy
+- MTB
+- Damka
+- Elektryczny]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Marka" id="0A39BEB9-89B2-8E2C-6522-A8FDAB61F32A">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 19:56:57 UTC</createdTime>
+<notes><![CDATA[Producent roweru:
+- Kross
+- Trek
+- Giant]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Kolor" id="44ECE899-690F-8445-19D9-290FBB283B1B">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 19:55:34 UTC</createdTime>
+<notes><![CDATA[Kolor:
+- Czerwony
+- Niebieski
+- Fioletowy]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Kraj_Pochodzenia" id="4D4DF8FC-DCAF-24A0-A327-AAA250BCB60D">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 19:58:04 UTC</createdTime>
+<notes><![CDATA[Kraj pochodzenia roweru, konkretnie pod:
+- Sprzedaż / wypożyczanie rowerów z danego kraju
+- Czy wypożyczalnia posiada części zamienne dla tego produktu
+
+Jest to atrybut opcjonalny.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Dostępność" id="65C7AF52-852C-5B6F-53B4-8DBD44BF6664">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:00:23 UTC</createdTime>
+<notes><![CDATA[Stan roweru w wypożyczalni:
+- Wypożyczony
+- Dostępny
+]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Transakcji" id="3DE1DBCA-13FD-32FC-0F07-94A10E22BE7E">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 21:29:55 UTC</createdTime>
+<generatorID>5802339B-6D25-9898-9832-2BC5ACC93FDF</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>C3AF6FB4-BD83-41EA-110C-1BD47776A549</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

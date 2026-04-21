@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="25224B29-3B7F-6EAF-74FE-9F9FC1A30171" name="Akcesoria">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:23:43 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<synonym>Dodatki</synonym>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_Produktu" id="3E251E13-EC8A-AC55-7768-E1F874E87CF1">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:24:59 UTC</createdTime>
+<notes><![CDATA[ID do wynajmowanego wyposażenia rowerowego, np. kasku.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nazwa" id="602F7D03-B7C0-130A-FF06-064782E88CB3">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:27:42 UTC</createdTime>
+<notes><![CDATA[Nazwa produktu: Kask Rowerowy Brante Bruno MX 150]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Kategoria" id="F85CD177-1535-48E1-F11E-3002A95685C4">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:25:41 UTC</createdTime>
+<notes><![CDATA[Kategoria produktu: Kask, Odblaski, Światło, Dzwonek]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Cena" id="04C761A4-CD7B-D38D-683C-552968E61EA7">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:26:37 UTC</createdTime>
+<notes><![CDATA[Cena wynajmu dodatku rowerowego przez klienta: np. 49.99 zł.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,10,4</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Rabat" id="0C4351C7-BA3C-C53D-382D-09A09E987E8F">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 21:06:42 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,10,4</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Kolor" id="6D7D8178-B8AB-C8DE-AF3A-9063029F7E11">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:28:36 UTC</createdTime>
+<notes><![CDATA[Kolor wyposażenia: np. czerwony kask.
+
+Opcjonalny atrybut.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Zakupu" id="6ABB5B49-B772-1AD0-1275-977899BEA27C">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 21:21:50 UTC</createdTime>
+<generatorID>8BF220DE-1ABD-B64B-4CD0-0435C8564231</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>9A53B1E9-2C76-719F-EE15-55ED15156E0D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="BF5AA035-E029-C83E-946E-33FD73C8B664" name="Wyposażenie PK">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:25:18 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3E251E13-EC8A-AC55-7768-E1F874E87CF1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

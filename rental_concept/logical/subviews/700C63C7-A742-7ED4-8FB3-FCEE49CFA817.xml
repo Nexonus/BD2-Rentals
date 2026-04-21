@@ -14,36 +14,92 @@
 <display>false</display>
 <notation>1</notation>
 <objectViews>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="25224B29-3B7F-6EAF-74FE-9F9FC1A30171" otype="Entity" vid="C0CBFDC4-5468-65F0-7534-6B276F92C8D2">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="646" y="405" width="186" height="141"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="2D3397D2-B317-C853-AF2B-341B75BC10D4" otype="Note" vid="424A5203-3151-DCFF-8ACB-85FC8E535A30">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="325" y="9" width="179" height="77"/>
+<comment>Kaucja jest wymaganym depozytem do wypożyczenia roweru. Jest zwracana w pełni, gdy rower zostanie oddany na czas bez uszkodzeń.</comment>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="2DA20622-077B-C545-22E9-30CF0AF5BE7F" otype="Note" vid="A0B696EF-DD4A-0EF1-49EC-B09AEB7DCE5D">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="647" y="359" width="184" height="40"/>
+<comment>Akcesoria są przedmiotami, które można u nas zakupić. Nie są zwrotne.</comment>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="7103478B-AC53-2EEA-726C-895B4EB4795C" otype="Note" vid="0ED0ADBC-1703-D2E9-6635-E6991E5846DB">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="326" y="93" width="179" height="51"/>
+<comment>Transakcja jest operacją wynajmu roweru, zakupu akcesoriów lub jednego i drugiego.</comment>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="7B0CBF4D-ED78-2FEE-239C-BCF3DB1B31A6" otype="Entity" vid="968C934F-A486-4E32-F3F6-B74018B9158B">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="330" y="422" width="170" height="110"/>
+</OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="8E90089E-0173-A4F4-3BB7-32FBF445FCF1" otype="Entity" vid="5DF63456-FA09-623D-63CA-2F1C1E65C6F4">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="87" y="295" width="177" height="107"/>
+<bounds x="325" y="152" width="182" height="200"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="91A85590-7A1A-0B5B-B5C8-41950A9BF18B" otype="Entity" vid="5E5692DC-6740-CC45-3A47-800ECB5516ED">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="87" y="102" width="170" height="110"/>
+<bounds x="20" y="205" width="170" height="141"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="AD4DB656-4681-7609-B73C-E05A6258D26F" otype="Note" vid="A549A421-C8E0-E86A-A55F-DFD6F14F4C73">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="20" y="9" width="168" height="190"/>
+<comment>Wybrany model pojęciowy:
+- Hybrydowe podejście dla Sklepu i Wypożyczalni rowerowej.
+Oferowane usługi:
+- Wypożyczanie rowerów (z kaucją)
+- Sprzedaż akcesoriów (kaski, dzwonki, itd.) 
+- Klientami są pełnoletnie osoby, wymogiem samego wynajmu jest podanie numeru PESEL.</comment>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="D99A8E7C-D896-B361-DF84-5A111096E437" otype="Entity" vid="34DC1C70-7633-BFA6-7300-ABF2097CF9EC">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="343" y="296" width="190" height="108"/>
+<bounds x="641" y="144" width="190" height="160"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="DC851873-550D-562F-4945-0B1D5139696D" otype="Note" vid="D6DE3B67-17D2-CA9E-81C6-48AE660F159D">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="642" y="98" width="188" height="40"/>
+<comment>Rower jest produktem, który można wypożyczyć. Są zwrotne.</comment>
 </OView>
 </objectViews>
 <connectors>
-<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="6297B24B-9B16-4698-FB3C-C8ACA9E97380" otype="Relation" vid_source="34DC1C70-7633-BFA6-7300-ABF2097CF9EC" vid_target="5DF63456-FA09-623D-63CA-2F1C1E65C6F4">
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="30FC76D1-4C2B-A2E4-8977-93699F3BC57C" otype="Relation" vid_source="5E5692DC-6740-CC45-3A47-800ECB5516ED" vid_target="5DF63456-FA09-623D-63CA-2F1C1E65C6F4">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="343" y="364"/>
-<point x="264" y="364"/>
+<point x="190" y="290"/>
+<point x="325" y="290"/>
 </points>
 </Connector>
-<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="B7E6A4EE-D408-FE72-0217-D47484D83848" otype="Relation" vid_source="5E5692DC-6740-CC45-3A47-800ECB5516ED" vid_target="5DF63456-FA09-623D-63CA-2F1C1E65C6F4">
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="5802339B-6D25-9898-9832-2BC5ACC93FDF" otype="Relation" vid_source="34DC1C70-7633-BFA6-7300-ABF2097CF9EC" vid_target="5DF63456-FA09-623D-63CA-2F1C1E65C6F4">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="172" y="212"/>
-<point x="172" y="295"/>
+<point x="641" y="250"/>
+<point x="507" y="250"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="8BF220DE-1ABD-B64B-4CD0-0435C8564231" otype="Relation" vid_source="968C934F-A486-4E32-F3F6-B74018B9158B" vid_target="C0CBFDC4-5468-65F0-7534-6B276F92C8D2">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="500" y="477"/>
+<point x="646" y="477"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="FDC81387-D8E4-E595-F4BE-114F672EFC3E" otype="Relation" vid_source="5DF63456-FA09-623D-63CA-2F1C1E65C6F4" vid_target="968C934F-A486-4E32-F3F6-B74018B9158B">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="415" y="352"/>
+<point x="415" y="422"/>
 </points>
 </Connector>
 </connectors>

@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="91A85590-7A1A-0B5B-B5C8-41950A9BF18B" name="Customer">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="91A85590-7A1A-0B5B-B5C8-41950A9BF18B" name="Klient">
 <createdBy>alexd</createdBy>
 <createdTime>2026-04-21 14:35:12 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
@@ -12,18 +12,41 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="customer_id" id="3BA6323D-20B8-BE22-7B20-53173CA60D3B">
+<Attribute name="ID_Klienta" id="3BA6323D-20B8-BE22-7B20-53173CA60D3B">
 <createdBy>alexd</createdBy>
 <createdTime>2026-04-21 14:35:33 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="email" id="7FA832E4-0536-9B6A-FECF-8EC182C57ADA">
+<Attribute name="Imię" id="7FA832E4-0536-9B6A-FECF-8EC182C57ADA">
 <createdBy>alexd</createdBy>
 <createdTime>2026-04-21 14:36:27 UTC</createdTime>
+<notes><![CDATA[W ramach obsługi klienta wymagane jest pozyskanie danych na temat jego imienia i nazwiska. Zakładamy odgórnie, że dane są przechowywane i wykorzystywane zgodnie z RODO.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nazwisko" id="D7F8570D-976E-F88F-04B8-74DA0D883567">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:32:42 UTC</createdTime>
+<notes><![CDATA[W ramach obsługi klienta wymagane jest pozyskanie danych na temat jego imienia i nazwiska. Zakładamy odgórnie, że dane są przechowywane i wykorzystywane zgodnie z RODO.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Kraj" id="21147FC1-3337-F4C7-016D-175BADB65313">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:33:15 UTC</createdTime>
+<notes><![CDATA[Teoretycznie opcjonalny parametr, ale również może się przydać w innych celach - np przy dochodzeniu czy rower nie został przewieziony poza granice kraju.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -31,6 +54,30 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>100</dataTypeSize>
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Telefon" id="DD58F54B-5FDA-50DC-0FE5-B6474662309F">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:34:59 UTC</createdTime>
+<notes><![CDATA[- Standardowe minimum dla telefonów komórkowych + znaki specjalne (20 znaków).
+- Telefon kontaktowy do klienta w razie gdyby była potrzeba, aby przypomnieć o zwrocie pojazdu.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PESEL" id="8FE53F33-CC95-06B1-9AA1-DD296C8DDFBC">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 20:38:04 UTC</createdTime>
+<notes><![CDATA[Nr. PESEL dla klientów wypożyczających rowery. Przy zakupie akcesoriów nie jest on wymagany. Podobnie dzieje się, gdy osoba jest spoza Polski.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>11 CHAR</dataTypeSize>
+<ownDataTypeParameters>11 CHAR,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Wynajem_Roweru" directorySegmentName="seg_0" id="5802339B-6D25-9898-9832-2BC5ACC93FDF">
+<createdBy>Jan</createdBy>
+<createdTime>2026-04-21 21:25:33 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<sourcePk>F2E4D171-DF6C-FD1F-8DA5-C40C2DC83C6A</sourcePk>
+<targetPk>129ECA6F-C64C-41AE-CFBC-49070A0A265C</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>D99A8E7C-D896-B361-DF84-5A111096E437</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>8E90089E-0173-A4F4-3BB7-32FBF445FCF1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
