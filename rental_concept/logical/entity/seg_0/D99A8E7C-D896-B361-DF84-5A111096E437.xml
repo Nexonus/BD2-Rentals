@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D99A8E7C-D896-B361-DF84-5A111096E437" name="bike">
+<createdBy>alexd</createdBy>
+<createdTime>2026-04-21 14:38:10 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="bike_id" id="3468E73B-36C8-6247-8E84-62D7DD03F934">
+<createdBy>alexd</createdBy>
+<createdTime>2026-04-21 14:38:24 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="bike_name" id="0118F538-3D2A-FA66-278A-40629CB9F3AB">
+<createdBy>alexd</createdBy>
+<createdTime>2026-04-21 14:38:44 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F2E4D171-DF6C-FD1F-8DA5-C40C2DC83C6A" name="bike PK">
+<createdBy>alexd</createdBy>
+<createdTime>2026-04-21 14:38:29 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3468E73B-36C8-6247-8E84-62D7DD03F934</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

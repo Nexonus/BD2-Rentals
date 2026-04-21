@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="91A85590-7A1A-0B5B-B5C8-41950A9BF18B" name="Customer">
+<createdBy>alexd</createdBy>
+<createdTime>2026-04-21 14:35:12 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="customer_id" id="3BA6323D-20B8-BE22-7B20-53173CA60D3B">
+<createdBy>alexd</createdBy>
+<createdTime>2026-04-21 14:35:33 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="7FA832E4-0536-9B6A-FECF-8EC182C57ADA">
+<createdBy>alexd</createdBy>
+<createdTime>2026-04-21 14:36:27 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D12D76E7-0A28-00A9-258F-A84849E2B6E0" name="Customer PK">
+<createdBy>alexd</createdBy>
+<createdTime>2026-04-21 14:36:09 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3BA6323D-20B8-BE22-7B20-53173CA60D3B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
