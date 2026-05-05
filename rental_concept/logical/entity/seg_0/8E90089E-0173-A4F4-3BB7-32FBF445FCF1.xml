@@ -150,6 +150,39 @@ Jeśli rower jest wypożyczony to musi posiadać miejsce wypożyczenia, aczkolwi
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="ID_Pracownika" id="E6D7F33F-13D1-3734-8F17-A6D92CDEF15C">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 22:21:46 UTC</createdTime>
+<generatorID>7B9411CE-D949-5364-3962-D31ECFAED4FA</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>B66DD117-6CEF-E352-A50E-2560EC3AEBBF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Lokalizacji" id="4AFA8723-CB86-3570-E7A6-9D0EAFD8C4F7">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 22:26:20 UTC</createdTime>
+<generatorID>53C4A9E8-8241-72BB-8F8A-2788F69331F2</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>FA568431-94C7-5F57-9265-83075C14A3BB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Lokalizacji1" id="A4C7B3DD-6432-19C9-773A-BEAF6720C993">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 22:30:15 UTC</createdTime>
+<generatorID>B78B2878-036C-79A6-7C1D-44FB5DFE315E</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>FA568431-94C7-5F57-9265-83075C14A3BB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="129ECA6F-C64C-41AE-CFBC-49070A0A265C" name="rental PK">

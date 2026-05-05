@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DB1C4CB3-C519-09E8-29EE-A092835DDA07" name="Serwis_Rowerowy">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:48:27 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_Serwisu" id="3F76EDD2-DD52-C869-D0C5-6BB1B50CAA9C">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:48:38 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Data_Rozpoczecia" id="DABD5FAB-2EB1-E644-6DBA-38A14EE9D0B4">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:48:49 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Data_Zakonczenia" id="FD0D477D-3AE4-A0CC-7C14-39870DCFB3C0">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:49:06 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Opis_Usterki" id="493D43AD-A6CE-6100-D60B-682D38BDD4DC">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:49:26 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Koszt_Naprawy" id="EEFF1FFE-0F7C-D62F-1F48-41F571420A5D">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:49:59 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Pracownika" id="B77093E4-4623-5289-A14D-501252839F97">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 22:23:54 UTC</createdTime>
+<generatorID>11C5AB7A-6614-2024-7E32-33499CD72A40</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>B66DD117-6CEF-E352-A50E-2560EC3AEBBF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Transakcji" id="72BD6ABD-DA47-D321-23BA-C4C8669CFDA1">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 22:24:58 UTC</createdTime>
+<generatorID>72A8DA52-D884-B738-DF0A-4FB3E64449E2</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>C3AF6FB4-BD83-41EA-110C-1BD47776A549</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Roweru" id="F89C0762-D14E-8BA4-4F85-6EEF177CF58E">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 22:25:32 UTC</createdTime>
+<generatorID>6B169AB3-52CB-8DED-15C9-CFA1BCA9324B</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>3468E73B-36C8-6247-8E84-62D7DD03F934</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="500DB6D6-BC2B-FD48-B11C-2DBA803733B7" name="Serwis_Rowerowy PK">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:48:48 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3F76EDD2-DD52-C869-D0C5-6BB1B50CAA9C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

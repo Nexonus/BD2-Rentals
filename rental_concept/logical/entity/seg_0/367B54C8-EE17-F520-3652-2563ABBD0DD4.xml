@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="367B54C8-EE17-F520-3652-2563ABBD0DD4" name="Lokalizacja">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:45:39 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_Lokalizacji" id="FA568431-94C7-5F57-9265-83075C14A3BB">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:46:06 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Miasto" id="2B2F6BFB-9FBB-4A9C-0A1B-9C70863388A2">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:46:32 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Adres" id="6F69AFE2-A0EF-966E-E59A-ADFAE14D9699">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:47:00 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="329F6006-F952-8A21-62C2-AFC05986A2E2" name="Lokalizacja PK">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:46:30 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FA568431-94C7-5F57-9265-83075C14A3BB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

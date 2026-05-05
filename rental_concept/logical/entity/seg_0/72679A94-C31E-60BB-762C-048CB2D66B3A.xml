@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="72679A94-C31E-60BB-762C-048CB2D66B3A" name="Pracownik">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:37:38 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_Pracownika" id="B66DD117-6CEF-E352-A50E-2560EC3AEBBF">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:38:12 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Imię" id="6783F642-80FF-F445-FC80-8CFDD36F2271">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:39:43 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nazwisko" id="60B97D59-1A7A-C752-A5DD-CC0F8F1A08FB">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:40:14 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Stanowisko" id="0485C5AA-CB20-6F2A-DBFC-9D785899DB2F">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:41:02 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Telefon" id="46AFD756-D767-E4F1-CC0E-53C82489B561">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:41:23 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Data_Zatrudnienia" id="47D41C0C-E815-3110-9362-D3C3B201ADFE">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:41:59 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="15DB80B6-4225-7D0F-AB11-6EF37B8BC361" name="Pracownik PK">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:38:42 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B66DD117-6CEF-E352-A50E-2560EC3AEBBF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

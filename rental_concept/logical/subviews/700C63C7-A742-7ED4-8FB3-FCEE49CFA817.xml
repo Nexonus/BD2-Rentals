@@ -28,14 +28,22 @@
 <bounds x="647" y="359" width="184" height="40"/>
 <comment>Akcesoria są przedmiotami, które można u nas zakupić. Nie są zwrotne.</comment>
 </OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="367B54C8-EE17-F520-3652-2563ABBD0DD4" otype="Entity" vid="3896A2DC-9B13-4C5F-BFBE-1CAD5DDC6266">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="606" y="577" width="186" height="105"/>
+</OView>
 <OView class="oracle.dbtools.crest.swingui.TVNote" oid="7103478B-AC53-2EEA-726C-895B4EB4795C" otype="Note" vid="0ED0ADBC-1703-D2E9-6635-E6991E5846DB">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <bounds x="326" y="93" width="179" height="51"/>
 <comment>Transakcja jest operacją wynajmu roweru, zakupu akcesoriów lub jednego i drugiego.</comment>
 </OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="72679A94-C31E-60BB-762C-048CB2D66B3A" otype="Entity" vid="FAC9E4B8-8568-D255-8000-90EB741FA6A4">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="22" y="364" width="170" height="143"/>
+</OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="7B0CBF4D-ED78-2FEE-239C-BCF3DB1B31A6" otype="Entity" vid="968C934F-A486-4E32-F3F6-B74018B9158B">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="330" y="422" width="170" height="110"/>
+<bounds x="330" y="421" width="176" height="111"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="8E90089E-0173-A4F4-3BB7-32FBF445FCF1" otype="Entity" vid="5DF63456-FA09-623D-63CA-2F1C1E65C6F4">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -47,7 +55,7 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.TVNote" oid="AD4DB656-4681-7609-B73C-E05A6258D26F" otype="Note" vid="A549A421-C8E0-E86A-A55F-DFD6F14F4C73">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="20" y="9" width="168" height="190"/>
+<bounds x="21" y="10" width="168" height="190"/>
 <comment>Wybrany model pojęciowy:
 - Hybrydowe podejście dla Sklepu i Wypożyczalni rowerowej.
 Oferowane usługi:
@@ -59,13 +67,30 @@ Oferowane usługi:
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <bounds x="641" y="144" width="190" height="160"/>
 </OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="DB1C4CB3-C519-09E8-29EE-A092835DDA07" otype="Entity" vid="2D732D88-C4A2-1815-4842-42102A8E8823">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="331" y="551" width="182" height="134"/>
+</OView>
 <OView class="oracle.dbtools.crest.swingui.TVNote" oid="DC851873-550D-562F-4945-0B1D5139696D" otype="Note" vid="D6DE3B67-17D2-CA9E-81C6-48AE660F159D">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <bounds x="642" y="98" width="188" height="40"/>
 <comment>Rower jest produktem, który można wypożyczyć. Są zwrotne.</comment>
 </OView>
+<OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="E1B0B183-E2AD-610F-EDEF-9E10BEBC920B" otype="Entity" vid="65C2B66F-349B-0104-0763-41723F712F7E">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="19" y="543" width="179" height="133"/>
+</OView>
 </objectViews>
 <connectors>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="11C5AB7A-6614-2024-7E32-33499CD72A40" otype="Relation" vid_source="FAC9E4B8-8568-D255-8000-90EB741FA6A4" vid_target="2D732D88-C4A2-1815-4842-42102A8E8823">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="192" y="484"/>
+<point x="331" y="565"/>
+</points>
+</Connector>
 <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="30FC76D1-4C2B-A2E4-8977-93699F3BC57C" otype="Relation" vid_source="5E5692DC-6740-CC45-3A47-800ECB5516ED" vid_target="5DF63456-FA09-623D-63CA-2F1C1E65C6F4">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <backgroundColor>-16777216</backgroundColor>
@@ -73,6 +98,15 @@ Oferowane usługi:
 <points>
 <point x="190" y="290"/>
 <point x="325" y="290"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="53C4A9E8-8241-72BB-8F8A-2788F69331F2" otype="Relation" vid_source="3896A2DC-9B13-4C5F-BFBE-1CAD5DDC6266" vid_target="5DF63456-FA09-623D-63CA-2F1C1E65C6F4">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="659" y="577"/>
+<point x="490" y="352"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="5802339B-6D25-9898-9832-2BC5ACC93FDF" otype="Relation" vid_source="34DC1C70-7633-BFA6-7300-ABF2097CF9EC" vid_target="5DF63456-FA09-623D-63CA-2F1C1E65C6F4">
@@ -84,13 +118,58 @@ Oferowane usługi:
 <point x="507" y="250"/>
 </points>
 </Connector>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="6B169AB3-52CB-8DED-15C9-CFA1BCA9324B" otype="Relation" vid_source="34DC1C70-7633-BFA6-7300-ABF2097CF9EC" vid_target="2D732D88-C4A2-1815-4842-42102A8E8823">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="672" y="304"/>
+<point x="475" y="551"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="72A8DA52-D884-B738-DF0A-4FB3E64449E2" otype="Relation" vid_source="5DF63456-FA09-623D-63CA-2F1C1E65C6F4" vid_target="2D732D88-C4A2-1815-4842-42102A8E8823">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="434" y="352"/>
+<point x="434" y="551"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="7B9411CE-D949-5364-3962-D31ECFAED4FA" otype="Relation" vid_source="FAC9E4B8-8568-D255-8000-90EB741FA6A4" vid_target="5DF63456-FA09-623D-63CA-2F1C1E65C6F4">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="192" y="433"/>
+<point x="325" y="348"/>
+</points>
+</Connector>
 <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="8BF220DE-1ABD-B64B-4CD0-0435C8564231" otype="Relation" vid_source="968C934F-A486-4E32-F3F6-B74018B9158B" vid_target="C0CBFDC4-5468-65F0-7534-6B276F92C8D2">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="500" y="477"/>
-<point x="646" y="477"/>
+<point x="506" y="476"/>
+<point x="646" y="476"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="B78B2878-036C-79A6-7C1D-44FB5DFE315E" otype="Relation" vid_source="3896A2DC-9B13-4C5F-BFBE-1CAD5DDC6266" vid_target="5DF63456-FA09-623D-63CA-2F1C1E65C6F4">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="659" y="577"/>
+<point x="475" y="352"/>
+</points>
+</Connector>
+<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="CEFCDD40-4832-02E8-5074-58D2BDD86854" otype="Relation" vid_source="FAC9E4B8-8568-D255-8000-90EB741FA6A4" vid_target="65C2B66F-349B-0104-0763-41723F712F7E">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<backgroundColor>-16777216</backgroundColor>
+<lineWidth>1</lineWidth>
+<points>
+<point x="107" y="507"/>
+<point x="107" y="543"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="FDC81387-D8E4-E595-F4BE-114F672EFC3E" otype="Relation" vid_source="5DF63456-FA09-623D-63CA-2F1C1E65C6F4" vid_target="968C934F-A486-4E32-F3F6-B74018B9158B">
@@ -98,8 +177,8 @@ Oferowane usługi:
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="415" y="352"/>
-<point x="415" y="422"/>
+<point x="418" y="352"/>
+<point x="418" y="421"/>
 </points>
 </Connector>
 </connectors>

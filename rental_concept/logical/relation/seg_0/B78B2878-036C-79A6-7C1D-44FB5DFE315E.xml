@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Miejsce_Zwrotu" directorySegmentName="seg_0" id="B78B2878-036C-79A6-7C1D-44FB5DFE315E">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 22:30:15 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<sourcePk>329F6006-F952-8A21-62C2-AFC05986A2E2</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>367B54C8-EE17-F520-3652-2563ABBD0DD4</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8E90089E-0173-A4F4-3BB7-32FBF445FCF1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
