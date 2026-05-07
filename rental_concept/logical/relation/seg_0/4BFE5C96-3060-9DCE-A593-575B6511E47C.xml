@@ -1,15 +1,17 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Wynajem_Roweru" directorySegmentName="seg_0" id="5802339B-6D25-9898-9832-2BC5ACC93FDF">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Reklamacja_Transakcja_FK" directorySegmentName="seg_0" id="4BFE5C96-3060-9DCE-A593-575B6511E47C">
 <createdBy>Jan</createdBy>
-<createdTime>2026-04-21 21:25:33 UTC</createdTime>
+<createdTime>2026-05-06 23:39:20 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
-<sourcePk>F2E4D171-DF6C-FD1F-8DA5-C40C2DC83C6A</sourcePk>
+<sourcePk>BB478E1D-8C49-ECFB-D633-72A61DBA6BC0</sourcePk>
 <targetPk>129ECA6F-C64C-41AE-CFBC-49070A0A265C</targetPk>
 <identifying>false</identifying>
+<nameOnSource>dotyczy</nameOnSource>
+<nameOnTarget>podlega</nameOnTarget>
 <optionalSource>false</optionalSource>
 <optionalTarget>true</optionalTarget>
-<sourceCardinality>*</sourceCardinality>
-<sourceEntity>D99A8E7C-D896-B361-DF84-5A111096E437</sourceEntity>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E1B0B183-E2AD-610F-EDEF-9E10BEBC920B</sourceEntity>
 <targetCardinalityString>1</targetCardinalityString>
 <targetEntity>8E90089E-0173-A4F4-3BB7-32FBF445FCF1</targetEntity>
 <transferable>true</transferable>

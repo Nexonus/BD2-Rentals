@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C1410C32-9D1D-A7A3-DA6A-A6B63361862C" name="Transakcja">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>8E90089E-0173-A4F4-3BB7-32FBF445FCF1</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Transakcji" id="4575B9C9-4D6B-F17F-FCF0-8D5BB22A8C81">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>C3AF6FB4-BD83-41EA-110C-1BD47776A549</generatorID>
+<notes><![CDATA[ID transakcji - identyfikator dla unikatowego wypożyczenia przez danego klienta wypożyczalni, bądź dla zakupu sprzętu rowerowego. Klient może dokonywać wielu wypożyczeń lub zakupów.
+
+Ważne:
+- Klient może wejść i kupić tylko kask, ale nie rower.
+- Klient może wypożyczyć sam rower.
+- Klient może wypożyczyć rower i kupić kask.
+To są warunki do dokonania transakcji.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Klient_ID_Klienta" id="7EC1C093-781B-BE83-EF41-4AC20CE00199">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>D5551755-86A0-10F1-2B19-715EE6E03C14</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="21AB46F9-10BF-85B1-2B1D-E0BC1FE417F0" referredColumn="6BB1E0D7-AEC9-607C-2005-6B3F21594355"/>
+</associations>
+</Column>
+<Column name="Kaucja_Pobrana" id="A89DDEFC-4959-F8B9-69CB-EBD62D9B2F7D">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>9FE7D402-5DB4-E7D4-E542-42B6C5A7B0E9</generatorID>
+<notes><![CDATA[Kaucja jest depozytem, który zostaje przekazany wypożyczalni w chwili wynajmu roweru. Jest to kwota wymagana do dokonania transakcji.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,10,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Kaucja_Zwrocona" id="5A95FA8D-457D-B3D7-A8DE-A032041E75A9">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>42C0A28A-CBA5-8822-9986-2597F4EA5C2F</generatorID>
+<notes><![CDATA[Ile zostało oddane pieniędzy klientowi (uwzględniamy spóźnienia i uszkodzenia roweru).]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,10,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Pracownik_ID_Pracownika" id="B50B58FF-1DAF-CFC8-337D-60A610B282CF">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>D29BF940-BF30-2475-0423-7AF8D67F06A5</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E822BACB-8FA4-D795-CF72-2FA89F3E6137" referredColumn="459D1D84-6FAA-B792-D7CA-87732025D0B5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BDBB545F-4880-F6B2-25D3-05037B0374A0" name="Transakcja_PK">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>129ECA6F-C64C-41AE-CFBC-49070A0A265C</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4575B9C9-4D6B-F17F-FCF0-8D5BB22A8C81"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4696D0B1-641A-90AD-DB37-A711E566BA6F" name="Transakcja_Klient_FK">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>76CE9BB2-7808-CF6A-AF67-C4F79E4D58A3</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7EC1C093-781B-BE83-EF41-4AC20CE00199"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FA05EFC9-6F33-3FB9-6A4D-F5405B692D93" name="Transakcja_Pracownik_FK">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>3F50F087-AEF1-1C9C-6405-D289C67EEEB4</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B50B58FF-1DAF-CFC8-337D-60A610B282CF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

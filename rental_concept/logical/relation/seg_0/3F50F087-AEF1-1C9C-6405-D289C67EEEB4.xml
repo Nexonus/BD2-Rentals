@@ -1,16 +1,18 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Obsługa_Reklamacjiv1" directorySegmentName="seg_0" id="CEFCDD40-4832-02E8-5074-58D2BDD86854">
-<createdBy>alexd</createdBy>
-<createdTime>2026-05-05 22:23:01 UTC</createdTime>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Pracownik_Transakcja_FK" directorySegmentName="seg_0" id="3F50F087-AEF1-1C9C-6405-D289C67EEEB4">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 22:39:22 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
 <sourcePk>15DB80B6-4225-7D0F-AB11-6EF37B8BC361</sourcePk>
 <identifying>false</identifying>
+<nameOnSource>obsługuje</nameOnSource>
+<nameOnTarget>zatwierdzana przez</nameOnTarget>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
 <sourceEntity>72679A94-C31E-60BB-762C-048CB2D66B3A</sourceEntity>
 <targetCardinalityString>*</targetCardinalityString>
-<targetEntity>E1B0B183-E2AD-610F-EDEF-9E10BEBC920B</targetEntity>
+<targetEntity>8E90089E-0173-A4F4-3BB7-32FBF445FCF1</targetEntity>
 <transferable>true</transferable>
 <deleteRule>NO ACTION</deleteRule>
 </Relation>

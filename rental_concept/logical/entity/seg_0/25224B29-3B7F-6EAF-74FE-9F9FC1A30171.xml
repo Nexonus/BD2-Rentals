@@ -83,17 +83,6 @@ Opcjonalny atrybut.]]></notes>
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_Zakupu" id="6ABB5B49-B772-1AD0-1275-977899BEA27C">
-<createdBy>Jan</createdBy>
-<createdTime>2026-04-21 21:21:50 UTC</createdTime>
-<generatorID>8BF220DE-1ABD-B64B-4CD0-0435C8564231</generatorID>
-<ownerDesignName>rental_concept</ownerDesignName>
-<referedAttribute>9A53B1E9-2C76-719F-EE15-55ED15156E0D</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="BF5AA035-E029-C83E-946E-33FD73C8B664" name="Wyposażenie PK">

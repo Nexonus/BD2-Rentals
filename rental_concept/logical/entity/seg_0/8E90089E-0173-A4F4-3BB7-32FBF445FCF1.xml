@@ -29,24 +29,12 @@ To są warunki do dokonania transakcji.]]></notes>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_Klienta" id="5967F69D-2D8F-C658-7FBB-5CAACE707058">
-<createdBy>alexd</createdBy>
-<createdTime>2026-04-21 14:39:40 UTC</createdTime>
-<notes><![CDATA[ID osoby wypożyczającej w wypożyczalni. Wypożyczenie nie może się obejść bez osoby wypożyczającej - zatem jest to część klucza kompozytowego dla modelu relacyjnego (kolejna faza projektu).
-
-- WYMAGANE.]]></notes>
-<ownerDesignName>rental_concept</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="ID_Roweru" id="82E09442-14AB-570D-C619-A25A3EEA7127">
+<Attribute name="ID_Klienta" id="D5551755-86A0-10F1-2B19-715EE6E03C14">
 <createdBy>Jan</createdBy>
-<createdTime>2026-04-21 20:14:22 UTC</createdTime>
-<notes><![CDATA[ID wypożyczonego roweru - Nie jest wymagany.]]></notes>
+<createdTime>2026-05-06 22:37:39 UTC</createdTime>
+<generatorID>76CE9BB2-7808-CF6A-AF67-C4F79E4D58A3</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
+<referedAttribute>3BA6323D-20B8-BE22-7B20-53173CA60D3B</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -77,110 +65,15 @@ To są warunki do dokonania transakcji.]]></notes>
 <dataTypeScale>4</dataTypeScale>
 <ownDataTypeParameters>,10,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Miejsce_Oddania" id="C96B673D-DC0D-4427-92DB-7F902E42EC3A">
+<Attribute name="ID_Pracownika" id="D29BF940-BF30-2475-0423-7AF8D67F06A5">
 <createdBy>Jan</createdBy>
-<createdTime>2026-04-21 20:12:34 UTC</createdTime>
-<notes><![CDATA[Miejsce Oddania:
-- Konkretna ulica na której znajduje się placówka sklepu w którym dokonano transakcji zwrotnej, np.: ul. Klarowna  8, Sklep MountainRide. 
-
-Nie może być  wymagany!]]></notes>
-<ownerDesignName>rental_concept</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100 CHAR</dataTypeSize>
-<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Miejsce_Wypożyczenia" id="B7DAA906-F954-0365-F34F-7862B8CF0DC3">
-<createdBy>Jan</createdBy>
-<createdTime>2026-04-21 20:10:15 UTC</createdTime>
-<notes><![CDATA[Miejsce Wypożyczenia:
-- Konkretna ulica na której znajduje się placówka sklepu w którym dokonano transakcji, np.: ul. Wiązowna 5, Sklep Ride2Go. 
-
-Vice versa dla Miejsca Oddania.
-Jeśli rower jest wypożyczony to musi posiadać miejsce wypożyczenia, aczkolwiek! Nie jest wymagane aby miał miejsce oddania. (Rower może nie wrócić do sklepu).]]></notes>
-<ownerDesignName>rental_concept</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100 CHAR</dataTypeSize>
-<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Data_Wypożyczenia" id="60635EB6-58E9-7B81-07A5-D26FF8412C32">
-<createdBy>Jan</createdBy>
-<createdTime>2026-04-21 20:43:24 UTC</createdTime>
-<notes><![CDATA[Data kiedy klient wypożyczył rower ze sklepu. Przy wynajmie jest to parametr wymagany.]]></notes>
-<ownerDesignName>rental_concept</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Data_Zwrotu" id="7209918E-7B62-BB70-8BF1-5358BBCE7CBA">
-<createdBy>Jan</createdBy>
-<createdTime>2026-04-21 20:44:13 UTC</createdTime>
-<notes><![CDATA[Data kiedy rower faktycznie został zwrócony do sklepu/wypożyczalni.]]></notes>
-<ownerDesignName>rental_concept</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Termin_Zwrotu" id="5AC5C347-BFB7-35EC-B5DD-8C6C9D45F511">
-<createdBy>Jan</createdBy>
-<createdTime>2026-04-21 20:44:55 UTC</createdTime>
-<notes><![CDATA[Termin zwrotu - wyznacza, do jakiego dnia i do której godziny (i minuty) powinien zostać zwrócony rower, aby nie została nałożona kaucja.]]></notes>
-<ownerDesignName>rental_concept</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="ID_Klienta1" id="0AD1F817-79EB-7065-FDAC-847714B7BA5C">
-<createdBy>Jan</createdBy>
-<createdTime>2026-04-21 21:30:54 UTC</createdTime>
-<generatorID>30FC76D1-4C2B-A2E4-8977-93699F3BC57C</generatorID>
-<ownerDesignName>rental_concept</ownerDesignName>
-<referedAttribute>3BA6323D-20B8-BE22-7B20-53173CA60D3B</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="ID_Pracownika" id="E6D7F33F-13D1-3734-8F17-A6D92CDEF15C">
-<createdBy>alexd</createdBy>
-<createdTime>2026-05-05 22:21:46 UTC</createdTime>
-<generatorID>7B9411CE-D949-5364-3962-D31ECFAED4FA</generatorID>
+<createdTime>2026-05-06 22:39:22 UTC</createdTime>
+<generatorID>3F50F087-AEF1-1C9C-6405-D289C67EEEB4</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <referedAttribute>B66DD117-6CEF-E352-A50E-2560EC3AEBBF</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="ID_Lokalizacji" id="4AFA8723-CB86-3570-E7A6-9D0EAFD8C4F7">
-<createdBy>alexd</createdBy>
-<createdTime>2026-05-05 22:26:20 UTC</createdTime>
-<generatorID>53C4A9E8-8241-72BB-8F8A-2788F69331F2</generatorID>
-<ownerDesignName>rental_concept</ownerDesignName>
-<referedAttribute>FA568431-94C7-5F57-9265-83075C14A3BB</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="ID_Lokalizacji1" id="A4C7B3DD-6432-19C9-773A-BEAF6720C993">
-<createdBy>alexd</createdBy>
-<createdTime>2026-05-05 22:30:15 UTC</createdTime>
-<generatorID>B78B2878-036C-79A6-7C1D-44FB5DFE315E</generatorID>
-<ownerDesignName>rental_concept</ownerDesignName>
-<referedAttribute>FA568431-94C7-5F57-9265-83075C14A3BB</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

@@ -1,29 +1,28 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="91A85590-7A1A-0B5B-B5C8-41950A9BF18B" name="Klient">
-<createdBy>alexd</createdBy>
-<createdTime>2026-04-21 14:35:12 UTC</createdTime>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="924D7361-6092-C728-1F23-11D894B17B87" name="Klient">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>91A85590-7A1A-0B5B-B5C8-41950A9BF18B</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
-<adequatelyNormalized>NO</adequatelyNormalized>
-<expectedVolumes>0</expectedVolumes>
-<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
-<growthPercent>0</growthPercent>
-<growthType>Year</growthType>
-<maxVolumes>9999999</maxVolumes>
-<minVolumes>0</minVolumes>
-<normalForm>Third</normalForm>
-<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_Klienta" id="3BA6323D-20B8-BE22-7B20-53173CA60D3B">
-<createdBy>alexd</createdBy>
-<createdTime>2026-04-21 14:35:33 UTC</createdTime>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Klienta" id="6BB1E0D7-AEC9-607C-2005-6B3F21594355">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>3BA6323D-20B8-BE22-7B20-53173CA60D3B</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Imię" id="7FA832E4-0536-9B6A-FECF-8EC182C57ADA">
-<createdBy>alexd</createdBy>
-<createdTime>2026-04-21 14:36:27 UTC</createdTime>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Imię" id="8E968DD8-4E04-96ED-2373-8EA1514CC3F6">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>7FA832E4-0536-9B6A-FECF-8EC182C57ADA</generatorID>
 <notes><![CDATA[W ramach obsługi klienta wymagane jest pozyskanie danych na temat jego imienia i nazwiska. Zakładamy odgórnie, że dane są przechowywane i wykorzystywane zgodnie z RODO.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -31,10 +30,12 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>100 CHAR</dataTypeSize>
 <ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Nazwisko" id="D7F8570D-976E-F88F-04B8-74DA0D883567">
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nazwisko" id="87033E38-3AEC-FB9B-F72E-20CBED798AB3">
 <createdBy>Jan</createdBy>
-<createdTime>2026-04-21 20:32:42 UTC</createdTime>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>D7F8570D-976E-F88F-04B8-74DA0D883567</generatorID>
 <notes><![CDATA[W ramach obsługi klienta wymagane jest pozyskanie danych na temat jego imienia i nazwiska. Zakładamy odgórnie, że dane są przechowywane i wykorzystywane zgodnie z RODO.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -42,10 +43,12 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>100 CHAR</dataTypeSize>
 <ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Kraj" id="21147FC1-3337-F4C7-016D-175BADB65313">
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Kraj" id="C77CDCC1-64A5-65E5-92E1-B4B9EAC21EB8">
 <createdBy>Jan</createdBy>
-<createdTime>2026-04-21 20:33:15 UTC</createdTime>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>21147FC1-3337-F4C7-016D-175BADB65313</generatorID>
 <notes><![CDATA[Teoretycznie opcjonalny parametr, ale również może się przydać w innych celach - np przy dochodzeniu czy rower nie został przewieziony poza granice kraju.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -54,10 +57,12 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>100</dataTypeSize>
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Telefon" id="DD58F54B-5FDA-50DC-0FE5-B6474662309F">
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Telefon" id="0BF06D4C-2598-78F8-2C6C-729680A427D0">
 <createdBy>Jan</createdBy>
-<createdTime>2026-04-21 20:34:59 UTC</createdTime>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>DD58F54B-5FDA-50DC-0FE5-B6474662309F</generatorID>
 <notes><![CDATA[- Standardowe minimum dla telefonów komórkowych + znaki specjalne (20 znaków).
 - Telefon kontaktowy do klienta w razie gdyby była potrzeba, aby przypomnieć o zwrocie pojazdu.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
@@ -66,10 +71,12 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="PESEL" id="8FE53F33-CC95-06B1-9AA1-DD296C8DDFBC">
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PESEL" id="34D014FF-52D0-BACA-237B-4FA61B258D2B">
 <createdBy>Jan</createdBy>
-<createdTime>2026-04-21 20:38:04 UTC</createdTime>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>8FE53F33-CC95-06B1-9AA1-DD296C8DDFBC</generatorID>
 <notes><![CDATA[Nr. PESEL dla klientów wypożyczających rowery. Przy zakupie akcesoriów nie jest on wymagany. Podobnie dzieje się, gdy osoba jest spoza Polski.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -77,17 +84,21 @@
 <logicalDatatype>LOGDT025</logicalDatatype>
 <dataTypeSize>11 CHAR</dataTypeSize>
 <ownDataTypeParameters>11 CHAR,,</ownDataTypeParameters>
-</Attribute>
-</attributes>
-<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="D12D76E7-0A28-00A9-258F-A84849E2B6E0" name="Customer PK">
-<createdBy>alexd</createdBy>
-<createdTime>2026-04-21 14:36:09 UTC</createdTime>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="84BC4B78-F3DF-882E-5892-010D1521E0B2" name="Klient_PK">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>D12D76E7-0A28-00A9-258F-A84849E2B6E0</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <pk>true</pk>
-<usedAttributes>
-<attributeRef>3BA6323D-20B8-BE22-7B20-53173CA60D3B</attributeRef>
-</usedAttributes>
-</identifier>
-</identifiers>
-</Entity>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BB1E0D7-AEC9-607C-2005-6B3F21594355"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

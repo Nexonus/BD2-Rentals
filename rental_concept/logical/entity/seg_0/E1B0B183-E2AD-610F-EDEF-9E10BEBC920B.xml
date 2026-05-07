@@ -18,8 +18,18 @@
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Status" id="D52B35FD-E7E7-365A-CC82-8AF1E15DA963">
+<createdBy>alexd</createdBy>
+<createdTime>2026-05-05 21:44:10 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Data_Zgloszenia" id="03C410F9-C3B5-260B-FAE1-AFF23BE07195">
 <createdBy>alexd</createdBy>
@@ -29,26 +39,6 @@
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Opis_Problemu" id="06FE110A-36A7-AD90-80B3-7E0A320CD7C2">
-<createdBy>alexd</createdBy>
-<createdTime>2026-05-05 21:43:45 UTC</createdTime>
-<ownerDesignName>rental_concept</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>500</dataTypeSize>
-<ownDataTypeParameters>500,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Status" id="D52B35FD-E7E7-365A-CC82-8AF1E15DA963">
-<createdBy>alexd</createdBy>
-<createdTime>2026-05-05 21:44:10 UTC</createdTime>
-<ownerDesignName>rental_concept</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Decyzja" id="692ADCDD-39CE-7549-C33E-408C513AC11E">
 <createdBy>alexd</createdBy>
@@ -61,15 +51,25 @@
 <dataTypeSize>200</dataTypeSize>
 <ownDataTypeParameters>200,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_Pracownika" id="15E9C0E9-29FB-022F-4FC3-3909BDF8490A">
+<Attribute name="Opis_Problemu" id="06FE110A-36A7-AD90-80B3-7E0A320CD7C2">
 <createdBy>alexd</createdBy>
-<createdTime>2026-05-05 22:23:01 UTC</createdTime>
-<generatorID>CEFCDD40-4832-02E8-5074-58D2BDD86854</generatorID>
+<createdTime>2026-05-05 21:43:45 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
-<referedAttribute>B66DD117-6CEF-E352-A50E-2560EC3AEBBF</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Transakcji" id="957C2375-6177-C619-E743-F126BBD307E1">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 23:39:41 UTC</createdTime>
+<generatorID>4BFE5C96-3060-9DCE-A593-575B6511E47C</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>C3AF6FB4-BD83-41EA-110C-1BD47776A549</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

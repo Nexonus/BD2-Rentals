@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="367B54C8-EE17-F520-3652-2563ABBD0DD4" name="Lokalizacja">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="367B54C8-EE17-F520-3652-2563ABBD0DD4" name="Sklep">
 <createdBy>alexd</createdBy>
 <createdTime>2026-05-05 21:45:39 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
@@ -12,13 +12,14 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_Lokalizacji" id="FA568431-94C7-5F57-9265-83075C14A3BB">
+<Attribute name="ID_Sklepu" id="FA568431-94C7-5F57-9265-83075C14A3BB">
 <createdBy>alexd</createdBy>
 <createdTime>2026-05-05 21:46:06 UTC</createdTime>
+<notes><![CDATA[ID Sklepu w jakim dokonujemy transakcji..]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Miasto" id="2B2F6BFB-9FBB-4A9C-0A1B-9C70863388A2">
@@ -38,8 +39,29 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Kod_Pocztowy" id="4F086361-FAA6-9329-CF48-7DB694A012FE">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 15:08:46 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Transakcji" id="82249847-8690-D42F-9CA9-5238D8D86AFC">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 23:37:30 UTC</createdTime>
+<generatorID>F32EEF5A-A884-4F13-A505-A8269E9BB70A</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>C3AF6FB4-BD83-41EA-110C-1BD47776A549</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

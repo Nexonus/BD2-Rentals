@@ -1,0 +1,123 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7B904A61-4C6D-1505-963D-3FC5D2ECD07C" name="Serwis_Roweru">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>DB1C4CB3-C519-09E8-29EE-A092835DDA07</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Serwisu" id="C3396AAA-8449-7A76-B7B4-B6F2D6840BC8">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>3F76EDD2-DD52-C869-D0C5-6BB1B50CAA9C</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Rower_ID_Roweru" id="C80D9FF0-945C-9291-3A37-5067EE6FEA38">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>8FE4D38F-FCC7-A2E6-B848-62A0FE941C0E</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2D482819-B4C7-E966-9A32-119B9E90B012" referredColumn="64D8FCEB-35E6-64A1-EECF-0D43C8722530"/>
+</associations>
+</Column>
+<Column name="Data_Rozpoczecia" id="1F26A76F-5155-67D3-FD74-BE8CB047A258">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>DABD5FAB-2EB1-E644-6DBA-38A14EE9D0B4</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Data_Zakonczenia" id="B8E92E07-9CA3-45EC-BDA5-2AB51CBA1F55">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>FD0D477D-3AE4-A0CC-7C14-39870DCFB3C0</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Opis_Usterki" id="277D4112-1BDD-4A9B-7004-40D225B11F05">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>493D43AD-A6CE-6100-D60B-682D38BDD4DC</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Koszt_Naprawy" id="9C102951-0A2D-F972-3326-9154B56EC85F">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>EEFF1FFE-0F7C-D62F-1F48-41F571420A5D</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BFFEB783-C99F-50F2-1F78-7AB41839A3C0" name="Serwis_Roweru_PK">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>500DB6D6-BC2B-FD48-B11C-2DBA803733B7</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C3396AAA-8449-7A76-B7B4-B6F2D6840BC8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AAA4BBE1-57B1-2C7B-6039-B654B40652EB" name="Serwis_Roweru__IDX">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>EE02EABE-9331-C8A2-BF63-8F4AA4CBC66E</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="C80D9FF0-945C-9291-3A37-5067EE6FEA38"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6327CAFB-2BED-18F7-1F14-E018679A7B57" name="Serwis_Roweru_Rower_FK">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>EE02EABE-9331-C8A2-BF63-8F4AA4CBC66E</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C80D9FF0-945C-9291-3A37-5067EE6FEA38"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

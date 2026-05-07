@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1AFB4ED4-0648-D986-E62A-6F3360B96364" name="Wypożyczenie">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 23:12:30 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_Wypożyczenia" id="075F4259-4F25-A3A1-DF6D-9A0B86B95980">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 23:12:43 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Transakcji" id="EBC48F80-324C-D92A-D6F0-FB63B8424302">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 23:14:18 UTC</createdTime>
+<generatorID>97B5E964-230D-8C3F-898B-2CEBA3392583</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>C3AF6FB4-BD83-41EA-110C-1BD47776A549</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Data_Wypożyczenia" id="514AFDB2-9F16-B168-BD2E-A8611049F735">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 23:16:20 UTC</createdTime>
+<notes><![CDATA[Data kiedy klient wypożyczył rower ze sklepu. Przy wynajmie jest to parametr wymagany.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Data_Zwrotu" id="D128A2DE-491C-CE93-F031-1DCC6F5F180E">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 23:16:20 UTC</createdTime>
+<notes><![CDATA[Data kiedy rower faktycznie został zwrócony do sklepu/wypożyczalni.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Termin_Zwrotu" id="B5959E2C-2EF3-575E-4703-CDDAA0494C20">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 23:16:20 UTC</createdTime>
+<notes><![CDATA[Termin zwrotu - wyznacza, do jakiego dnia i do której godziny (i minuty) powinien zostać zwrócony rower, aby nie została nałożona kaucja.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Sklepu" id="0F498A1F-7BCE-EDC8-E876-40A45BA0485C">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 23:34:48 UTC</createdTime>
+<generatorID>055C5350-FCFC-5038-CC7E-13D314549BC1</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>FA568431-94C7-5F57-9265-83075C14A3BB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="48D746E6-0DE8-B373-61F5-653ACA958390" name="Wypożyczenie PK">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 23:13:10 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>075F4259-4F25-A3A1-DF6D-9A0B86B95980</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

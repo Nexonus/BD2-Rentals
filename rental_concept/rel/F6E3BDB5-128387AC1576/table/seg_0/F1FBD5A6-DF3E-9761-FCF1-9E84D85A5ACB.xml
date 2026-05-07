@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F1FBD5A6-DF3E-9761-FCF1-9E84D85A5ACB" name="Rower">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>D99A8E7C-D896-B361-DF84-5A111096E437</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Roweru" id="64D8FCEB-35E6-64A1-EECF-0D43C8722530">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>3468E73B-36C8-6247-8E84-62D7DD03F934</generatorID>
+<notes><![CDATA[Identyfikatory rowerów, może być INTEGER]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Typ_Roweru" id="4C5FD2D2-C83D-7854-8994-AAE74B2A3A52">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>8D5F057D-4DAB-2131-A00C-01DB4E66B211</generatorID>
+<notes><![CDATA[Przykładowe typy rowerów:
+- Trekkingowy
+- MTB
+- Damka
+- Elektryczny]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Marka" id="6527A080-CBAB-DC59-DA17-C8AB62A7294F">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>0A39BEB9-89B2-8E2C-6522-A8FDAB61F32A</generatorID>
+<notes><![CDATA[Producent roweru:
+- Kross
+- Trek
+- Giant]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Kolor" id="94A6EEA4-6043-D674-6EA6-645B3D36EC26">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>44ECE899-690F-8445-19D9-290FBB283B1B</generatorID>
+<notes><![CDATA[Kolor:
+- Czerwony
+- Niebieski
+- Fioletowy]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Kraj_Pochodzenia" id="F135BC33-1A6E-2E47-7B18-7E0D15747806">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>4D4DF8FC-DCAF-24A0-A327-AAA250BCB60D</generatorID>
+<notes><![CDATA[Kraj pochodzenia roweru, konkretnie pod:
+- Sprzedaż / wypożyczanie rowerów z danego kraju
+- Czy wypożyczalnia posiada części zamienne dla tego produktu
+
+Jest to atrybut opcjonalny.]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Dostępność" id="BCF59853-0159-2FE4-2B5A-1185FBF7A7BA">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>65C7AF52-852C-5B6F-53B4-8DBD44BF6664</generatorID>
+<notes><![CDATA[Stan roweru w wypożyczalni:
+- Wypożyczony
+- Dostępny
+]]></notes>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Wypożyczenie_ID_Wypożyczenia" id="F07440F0-D082-E09D-55DF-B63D78F16AAC">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>441263C4-7B22-E732-BAAC-CCBFAA04FD3B</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ADB197F0-36E2-E417-9E47-65A3A7D6371A" referredColumn="0293E848-73D8-CC6B-78D8-1414C1730695"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2A10BE4D-EEB4-DF31-A34D-0A92BF24B561" name="Rower_PK">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>F2E4D171-DF6C-FD1F-8DA5-C40C2DC83C6A</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="64D8FCEB-35E6-64A1-EECF-0D43C8722530"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B60DB66A-9077-377C-3B10-38D0538B9614" name="Rower_Wypożyczenie_FK">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>71810AE9-DC44-E032-ABEA-C82379252718</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F07440F0-D082-E09D-55DF-B63D78F16AAC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

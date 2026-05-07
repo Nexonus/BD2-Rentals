@@ -22,20 +22,23 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_Transakcji" id="F4BABBB5-46CF-F60B-1A36-A625E85830F1">
+<Attribute name="ID_Transakcji" id="E3E9E543-C9DC-664F-9FDE-78FEA3D89390">
 <createdBy>Jan</createdBy>
-<createdTime>2026-04-21 20:50:47 UTC</createdTime>
-<notes><![CDATA[ID dla transakcji powiązanej z wynajmem roweru. Zakładamy, że klient wynajmując rower może dokonać dodatkowego (opcjonalnego) zakupu, np. kasku rowerowego.]]></notes>
+<createdTime>2026-05-06 22:58:01 UTC</createdTime>
+<generatorID>B4B67D33-99D3-9905-F5A1-FC0D7B52F929</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>C3AF6FB4-BD83-41EA-110C-1BD47776A549</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_Produktu" id="7040B71A-AB6D-91AD-975E-CFED86CFD5B0">
+<Attribute name="ID_Produktu" id="AFFFA24F-1E97-56D5-ADE7-19D92D1880F0">
 <createdBy>Jan</createdBy>
-<createdTime>2026-04-21 20:50:58 UTC</createdTime>
+<createdTime>2026-05-06 23:05:49 UTC</createdTime>
+<generatorID>F05AFE1C-9534-8760-5600-E642C3A65B23</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>3E251E13-EC8A-AC55-7768-E1F874E87CF1</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -63,17 +66,6 @@
 <dataTypeScale>4</dataTypeScale>
 <ownDataTypeParameters>,10,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_Transakcji1" id="88AB4EEA-7B3F-9290-033D-D715E409A0E4">
-<createdBy>Jan</createdBy>
-<createdTime>2026-04-21 21:27:53 UTC</createdTime>
-<generatorID>FDC81387-D8E4-E595-F4BE-114F672EFC3E</generatorID>
-<ownerDesignName>rental_concept</ownerDesignName>
-<referedAttribute>C3AF6FB4-BD83-41EA-110C-1BD47776A549</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="11934BCD-53BC-F963-76BF-CB733EBDD6A7" name="Zakup_Sprzętu PK">
@@ -83,6 +75,7 @@
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>9A53B1E9-2C76-719F-EE15-55ED15156E0D</attributeRef>
+<attributeRef>E3E9E543-C9DC-664F-9FDE-78FEA3D89390</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

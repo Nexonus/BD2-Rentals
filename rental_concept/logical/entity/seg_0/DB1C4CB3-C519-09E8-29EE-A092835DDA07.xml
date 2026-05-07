@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DB1C4CB3-C519-09E8-29EE-A092835DDA07" name="Serwis_Rowerowy">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DB1C4CB3-C519-09E8-29EE-A092835DDA07" name="Serwis_Roweru">
 <createdBy>alexd</createdBy>
 <createdTime>2026-05-05 21:48:27 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
@@ -18,7 +18,18 @@
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Roweru" id="8FE4D38F-FCC7-A2E6-B848-62A0FE941C0E">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 23:23:51 UTC</createdTime>
+<generatorID>EE02EABE-9331-C8A2-BF63-8F4AA4CBC66E</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referedAttribute>3468E73B-36C8-6247-8E84-62D7DD03F934</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Data_Rozpoczecia" id="DABD5FAB-2EB1-E644-6DBA-38A14EE9D0B4">
@@ -61,39 +72,6 @@
 <dataTypePrecision>8</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,8,2</ownDataTypeParameters>
-</Attribute>
-<Attribute name="ID_Pracownika" id="B77093E4-4623-5289-A14D-501252839F97">
-<createdBy>alexd</createdBy>
-<createdTime>2026-05-05 22:23:54 UTC</createdTime>
-<generatorID>11C5AB7A-6614-2024-7E32-33499CD72A40</generatorID>
-<ownerDesignName>rental_concept</ownerDesignName>
-<referedAttribute>B66DD117-6CEF-E352-A50E-2560EC3AEBBF</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="ID_Transakcji" id="72BD6ABD-DA47-D321-23BA-C4C8669CFDA1">
-<createdBy>alexd</createdBy>
-<createdTime>2026-05-05 22:24:58 UTC</createdTime>
-<generatorID>72A8DA52-D884-B738-DF0A-4FB3E64449E2</generatorID>
-<ownerDesignName>rental_concept</ownerDesignName>
-<referedAttribute>C3AF6FB4-BD83-41EA-110C-1BD47776A549</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="ID_Roweru" id="F89C0762-D14E-8BA4-4F85-6EEF177CF58E">
-<createdBy>alexd</createdBy>
-<createdTime>2026-05-05 22:25:32 UTC</createdTime>
-<generatorID>6B169AB3-52CB-8DED-15C9-CFA1BCA9324B</generatorID>
-<ownerDesignName>rental_concept</ownerDesignName>
-<referedAttribute>3468E73B-36C8-6247-8E84-62D7DD03F934</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

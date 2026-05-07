@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Transakcja_Zakup_FK" directorySegmentName="seg_0" id="B4B67D33-99D3-9905-F5A1-FC0D7B52F929">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 22:58:01 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<sourcePk>129ECA6F-C64C-41AE-CFBC-49070A0A265C</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>zawiera</nameOnSource>
+<nameOnTarget>należy</nameOnTarget>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>8E90089E-0173-A4F4-3BB7-32FBF445FCF1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>7B0CBF4D-ED78-2FEE-239C-BCF3DB1B31A6</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

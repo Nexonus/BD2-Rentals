@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AC9AF711-767A-6FCC-CBCC-9A991FDE1C4F" containerWithKeyObject="2433E6A9-787B-1E44-9E69-5C0F43107D70" localFKIndex="F33CCF4E-315E-F028-FADE-D0F03FF7AB88" name="Zakup_Sprzętu_Transakcja_FK">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<generatorID>B4B67D33-99D3-9905-F5A1-FC0D7B52F929</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referredTableLongName>Transakcja</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C1410C32-9D1D-A7A3-DA6A-A6B63361862C</referredTableID>
+<keyObject>BDBB545F-4880-F6B2-25D3-05037B0374A0</keyObject>
+<referredKeyID>BDBB545F-4880-F6B2-25D3-05037B0374A0</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_Transakcji</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

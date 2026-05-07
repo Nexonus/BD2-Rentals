@@ -1,11 +1,13 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Realizacja_Transakcji_Klient" directorySegmentName="seg_0" id="30FC76D1-4C2B-A2E4-8977-93699F3BC57C">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Klient_Transakcja_FK" directorySegmentName="seg_0" id="76CE9BB2-7808-CF6A-AF67-C4F79E4D58A3">
 <createdBy>Jan</createdBy>
-<createdTime>2026-04-21 21:30:54 UTC</createdTime>
+<createdTime>2026-05-06 22:37:39 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
 <sourcePk>D12D76E7-0A28-00A9-258F-A84849E2B6E0</sourcePk>
 <identifying>false</identifying>
-<optionalSource>false</optionalSource>
+<nameOnSource>dokonuje</nameOnSource>
+<nameOnTarget>przypisana do</nameOnTarget>
+<optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
 <sourceEntity>91A85590-7A1A-0B5B-B5C8-41950A9BF18B</sourceEntity>

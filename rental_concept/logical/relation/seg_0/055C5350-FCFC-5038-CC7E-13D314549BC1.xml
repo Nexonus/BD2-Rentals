@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Wypożyczenie_Sklep_FK" directorySegmentName="seg_0" id="055C5350-FCFC-5038-CC7E-13D314549BC1">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 23:34:32 UTC</createdTime>
+<ownerDesignName>rental_concept</ownerDesignName>
+<sourcePk>48D746E6-0DE8-B373-61F5-653ACA958390</sourcePk>
+<targetPk>329F6006-F952-8A21-62C2-AFC05986A2E2</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>1AFB4ED4-0648-D986-E62A-6F3360B96364</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>367B54C8-EE17-F520-3652-2563ABBD0DD4</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
