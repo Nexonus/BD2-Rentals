@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7725416A-47D0-0819-84D4-5C43B4665F19" name="Wypożyczenie">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="875237C2-FDBE-4743-B054-5B5C8F63B38C" name="Wypożyczenie">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>1AFB4ED4-0648-D986-E62A-6F3360B96364</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_Wypożyczenia" id="0293E848-73D8-CC6B-78D8-1414C1730695">
+<Column name="ID_Wypożyczenia" id="914E78BD-C0B9-297E-0E27-E37F14FB7529">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>075F4259-4F25-A3A1-DF6D-9A0B86B95980</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -19,9 +19,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Transakcja_ID_Transakcji" id="3FA86D5F-72A2-40FE-3E14-FE614A917F61">
+<Column name="Transakcja_ID_Transakcji" id="94AC2532-8033-FC55-7A9E-3673F0DF2206">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>EBC48F80-324C-D92A-D6F0-FB63B8424302</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -31,12 +31,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="3EC26F26-2240-C8BB-14A6-191DD44D1876" referredColumn="4575B9C9-4D6B-F17F-FCF0-8D5BB22A8C81"/>
+<colAssociation fkAssociation="EE056A8B-EF64-27F6-22C5-3AC55D352097" referredColumn="5AECF169-9D25-251B-A7C1-246E58209FCE"/>
 </associations>
 </Column>
-<Column name="Data_Wypożyczenia" id="47418594-BB9E-473C-3A35-CBAD0C82F8AB">
+<Column name="Data_Wypożyczenia" id="DEFAE5F7-DE26-A9FC-00E2-F7C06BB0B29E">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>514AFDB2-9F16-B168-BD2E-A8611049F735</generatorID>
 <notes><![CDATA[Data kiedy klient wypożyczył rower ze sklepu. Przy wynajmie jest to parametr wymagany.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
@@ -46,9 +46,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Data_Zwrotu" id="E584EA06-D3EE-24A3-8265-3731EA69513B">
+<Column name="Data_Zwrotu" id="2CA03B40-CBAF-F8BA-3A24-CFC77F6D3475">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>D128A2DE-491C-CE93-F031-1DCC6F5F180E</generatorID>
 <notes><![CDATA[Data kiedy rower faktycznie został zwrócony do sklepu/wypożyczalni.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
@@ -59,9 +59,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Termin_Zwrotu" id="F46F6D3D-6C5D-7192-8487-704090D659B3">
+<Column name="Termin_Zwrotu" id="718BD837-BDC9-9CC0-E02C-6393C5565D36">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>B5959E2C-2EF3-575E-4703-CDDAA0494C20</generatorID>
 <notes><![CDATA[Termin zwrotu - wyznacza, do jakiego dnia i do której godziny (i minuty) powinien zostać zwrócony rower, aby nie została nałożona kaucja.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
@@ -72,10 +72,10 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Sklep_ID_Sklepu" id="0A7B4BF0-8B22-AABA-EC1E-16587BFA9B75">
+<Column name="Transakcja_Sklep_ID_Sklepu" id="AAFEE3B3-B1A1-3958-5DBB-FC2CADC6E017">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
-<generatorID>0F498A1F-7BCE-EDC8-E876-40A45BA0485C</generatorID>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
+<generatorID>AC64662F-5195-3A32-A8CB-C4D4D2E0ECDF</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -84,43 +84,35 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="F9FEAB55-4D24-89F7-1E9B-A93D9055E218" referredColumn="2CA1D138-FDD2-1EC1-F051-841464FB2912"/>
+<colAssociation fkAssociation="EE056A8B-EF64-27F6-22C5-3AC55D352097" referredColumn="22BB56A6-2229-BE98-AD20-BAB191D77595"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="C5F94A6C-1F11-E2D4-4DA7-49167C166481" name="Wypożyczenie_PK">
+<ind_PK_UK id="CB717394-4FB6-2DDC-D84D-C131DEEC858E" name="Wypożyczenie_PK">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>48D746E6-0DE8-B373-61F5-653ACA958390</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="0293E848-73D8-CC6B-78D8-1414C1730695"/>
+<colUsage columnID="914E78BD-C0B9-297E-0E27-E37F14FB7529"/>
+<colUsage columnID="94AC2532-8033-FC55-7A9E-3673F0DF2206"/>
+<colUsage columnID="AAFEE3B3-B1A1-3958-5DBB-FC2CADC6E017"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E3AA4C07-E74A-6B55-BD69-D5D155B04256" name="Wypożyczenie_Transakcja_FK">
+<ind_PK_UK id="ABD5316E-5986-2AD9-69D2-59C937FE74EE" name="Wypożyczenie_Transakcja_FK">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>97B5E964-230D-8C3F-898B-2CEBA3392583</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="3FA86D5F-72A2-40FE-3E14-FE614A917F61"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="0F339E0E-0EC9-56C1-5B67-EA4BA4441AEB" name="Wypożyczenie_Sklep_FK">
-<createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
-<generatorID>055C5350-FCFC-5038-CC7E-13D314549BC1</generatorID>
-<ownerDesignName>rental_concept</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="0A7B4BF0-8B22-AABA-EC1E-16587BFA9B75"/>
+<colUsage columnID="94AC2532-8033-FC55-7A9E-3673F0DF2206"/>
+<colUsage columnID="AAFEE3B3-B1A1-3958-5DBB-FC2CADC6E017"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

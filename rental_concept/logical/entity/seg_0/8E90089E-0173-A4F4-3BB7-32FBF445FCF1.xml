@@ -3,6 +3,9 @@
 <createdBy>alexd</createdBy>
 <createdTime>2026-04-21 14:39:17 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -24,6 +27,23 @@ Ważne:
 - Klient może wypożyczyć rower i kupić kask.
 To są warunki do dokonania transakcji.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Sklepu" id="4B90066F-DE9F-ED87-5EEC-7A429011EDAD">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-12 18:11:41 UTC</createdTime>
+<generatorID>F32EEF5A-A884-4F13-A505-A8269E9BB70A</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
+<referedAttribute>FA568431-94C7-5F57-9265-83075C14A3BB</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -34,7 +54,24 @@ To są warunki do dokonania transakcji.]]></notes>
 <createdTime>2026-05-06 22:37:39 UTC</createdTime>
 <generatorID>76CE9BB2-7808-CF6A-AF67-C4F79E4D58A3</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <referedAttribute>3BA6323D-20B8-BE22-7B20-53173CA60D3B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Pracownika" id="D29BF940-BF30-2475-0423-7AF8D67F06A5">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-06 22:39:22 UTC</createdTime>
+<generatorID>3F50F087-AEF1-1C9C-6405-D289C67EEEB4</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
+<referedAttribute>B66DD117-6CEF-E352-A50E-2560EC3AEBBF</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -45,6 +82,9 @@ To są warunki do dokonania transakcji.]]></notes>
 <createdTime>2026-04-21 21:15:35 UTC</createdTime>
 <notes><![CDATA[Kaucja jest depozytem, który zostaje przekazany wypożyczalni w chwili wynajmu roweru. Jest to kwota wymagana do dokonania transakcji.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT026</logicalDatatype>
@@ -57,6 +97,9 @@ To są warunki do dokonania transakcji.]]></notes>
 <createdTime>2026-04-21 21:19:06 UTC</createdTime>
 <notes><![CDATA[Ile zostało oddane pieniędzy klientowi (uwzględniamy spóźnienia i uszkodzenia roweru).]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -65,26 +108,19 @@ To są warunki do dokonania transakcji.]]></notes>
 <dataTypeScale>4</dataTypeScale>
 <ownDataTypeParameters>,10,4</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_Pracownika" id="D29BF940-BF30-2475-0423-7AF8D67F06A5">
-<createdBy>Jan</createdBy>
-<createdTime>2026-05-06 22:39:22 UTC</createdTime>
-<generatorID>3F50F087-AEF1-1C9C-6405-D289C67EEEB4</generatorID>
-<ownerDesignName>rental_concept</ownerDesignName>
-<referedAttribute>B66DD117-6CEF-E352-A50E-2560EC3AEBBF</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="129ECA6F-C64C-41AE-CFBC-49070A0A265C" name="rental PK">
 <createdBy>alexd</createdBy>
 <createdTime>2026-04-21 14:39:29 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>C3AF6FB4-BD83-41EA-110C-1BD47776A549</attributeRef>
+<attributeRef>4B90066F-DE9F-ED87-5EEC-7A429011EDAD</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

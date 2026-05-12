@@ -3,6 +3,9 @@
 <createdBy>Jan</createdBy>
 <createdTime>2026-05-06 22:39:22 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <sourcePk>15DB80B6-4225-7D0F-AB11-6EF37B8BC361</sourcePk>
 <identifying>false</identifying>
 <nameOnSource>obsługuje</nameOnSource>

@@ -3,6 +3,9 @@
 <createdBy>Jan</createdBy>
 <createdTime>2026-05-06 23:12:30 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -16,6 +19,9 @@
 <createdBy>Jan</createdBy>
 <createdTime>2026-05-06 23:12:43 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -26,6 +32,9 @@
 <createdTime>2026-05-06 23:14:18 UTC</createdTime>
 <generatorID>97B5E964-230D-8C3F-898B-2CEBA3392583</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <referedAttribute>C3AF6FB4-BD83-41EA-110C-1BD47776A549</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -37,6 +46,9 @@
 <createdTime>2026-05-06 23:16:20 UTC</createdTime>
 <notes><![CDATA[Data kiedy klient wypożyczył rower ze sklepu. Przy wynajmie jest to parametr wymagany.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT008</logicalDatatype>
@@ -47,6 +59,9 @@
 <createdTime>2026-05-06 23:16:20 UTC</createdTime>
 <notes><![CDATA[Data kiedy rower faktycznie został zwrócony do sklepu/wypożyczalni.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -58,18 +73,24 @@
 <createdTime>2026-05-06 23:16:20 UTC</createdTime>
 <notes><![CDATA[Termin zwrotu - wyznacza, do jakiego dnia i do której godziny (i minuty) powinien zostać zwrócony rower, aby nie została nałożona kaucja.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_Sklepu" id="0F498A1F-7BCE-EDC8-E876-40A45BA0485C">
+<Attribute name="ID_Sklepu" id="AC64662F-5195-3A32-A8CB-C4D4D2E0ECDF">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-06 23:34:48 UTC</createdTime>
-<generatorID>055C5350-FCFC-5038-CC7E-13D314549BC1</generatorID>
+<createdTime>2026-05-12 18:21:04 UTC</createdTime>
+<generatorID>97B5E964-230D-8C3F-898B-2CEBA3392583</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
-<referedAttribute>FA568431-94C7-5F57-9265-83075C14A3BB</referedAttribute>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
+<referedAttribute>4B90066F-DE9F-ED87-5EEC-7A429011EDAD</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -81,9 +102,14 @@
 <createdBy>Jan</createdBy>
 <createdTime>2026-05-06 23:13:10 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>075F4259-4F25-A3A1-DF6D-9A0B86B95980</attributeRef>
+<attributeRef>EBC48F80-324C-D92A-D6F0-FB63B8424302</attributeRef>
+<attributeRef>AC64662F-5195-3A32-A8CB-C4D4D2E0ECDF</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

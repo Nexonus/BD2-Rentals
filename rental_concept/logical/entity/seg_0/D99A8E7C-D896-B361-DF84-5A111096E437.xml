@@ -3,6 +3,9 @@
 <createdBy>alexd</createdBy>
 <createdTime>2026-04-21 14:38:10 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -18,6 +21,9 @@
 <createdTime>2026-04-21 14:38:24 UTC</createdTime>
 <notes><![CDATA[Identyfikatory rowerów, może być INTEGER]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -32,6 +38,9 @@
 - Damka
 - Elektryczny]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -46,6 +55,9 @@
 - Trek
 - Giant]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -60,6 +72,9 @@
 - Niebieski
 - Fioletowy]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -76,6 +91,9 @@
 
 Jest to atrybut opcjonalny.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -91,6 +109,9 @@ Jest to atrybut opcjonalny.]]></notes>
 - Dostępny
 ]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -102,7 +123,38 @@ Jest to atrybut opcjonalny.]]></notes>
 <createdTime>2026-05-06 23:15:20 UTC</createdTime>
 <generatorID>71810AE9-DC44-E032-ABEA-C82379252718</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <referedAttribute>075F4259-4F25-A3A1-DF6D-9A0B86B95980</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Transakcji" id="BC2420F2-6017-298D-7E6E-8AD52E549B95">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-12 18:05:08 UTC</createdTime>
+<generatorID>71810AE9-DC44-E032-ABEA-C82379252718</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
+<referedAttribute>EBC48F80-324C-D92A-D6F0-FB63B8424302</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_Sklepu" id="46DC97B0-8D0E-A09E-EEEE-36B587E51824">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-12 18:21:04 UTC</createdTime>
+<generatorID>71810AE9-DC44-E032-ABEA-C82379252718</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
+<referedAttribute>AC64662F-5195-3A32-A8CB-C4D4D2E0ECDF</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -114,6 +166,10 @@ Jest to atrybut opcjonalny.]]></notes>
 <createdBy>alexd</createdBy>
 <createdTime>2026-04-21 14:38:29 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="false"/>
+</engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>3468E73B-36C8-6247-8E84-62D7DD03F934</attributeRef>

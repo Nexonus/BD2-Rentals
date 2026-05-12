@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="93ACA6D9-D8DF-035D-9A6E-0B852B14D26F" name="Reklamacja">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0BE5BDBC-D668-C653-EC81-EDCBE8DE4A51" name="Reklamacja">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>E1B0B183-E2AD-610F-EDEF-9E10BEBC920B</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_Reklamacji" id="8881262E-BC3F-ED4A-CD5A-650FECB4BA3F">
+<Column name="ID_Reklamacji" id="289E5B7E-C875-107F-E8C8-4551CD62EF4B">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>88B02BA0-6EBC-77FE-8D26-42DAFBC63EBE</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -19,9 +19,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Status" id="E68A0045-94F4-114D-44BC-9DF0610C8ED6">
+<Column name="Status" id="FAB5D5FE-8D9E-970C-8D76-417CF04A418A">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>D52B35FD-E7E7-365A-CC82-8AF1E15DA963</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -31,9 +31,9 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Data_Zgloszenia" id="08CE5919-3366-418F-0918-9E2256E862DA">
+<Column name="Data_Zgloszenia" id="1636FF2B-08AD-C0A0-5D93-D6894D1F334F">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>03C410F9-C3B5-260B-FAE1-AFF23BE07195</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -42,9 +42,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Decyzja" id="71F4BAB2-DBFC-2EB4-8AF6-BDFBCC8AFFAE">
+<Column name="Decyzja" id="9E5E17F3-303E-050C-8338-8C126BA23EB1">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>692ADCDD-39CE-7549-C33E-408C513AC11E</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -55,9 +55,9 @@
 <ownDataTypeParameters>200,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Opis_Problemu" id="73AD7C8F-3073-5CCE-FD57-C81C20572ABA">
+<Column name="Opis_Problemu" id="437E9133-B152-FC40-6397-4D8DD829A56F">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>06FE110A-36A7-AD90-80B3-7E0A320CD7C2</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -67,9 +67,9 @@
 <ownDataTypeParameters>500,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Transakcja_ID_Transakcji" id="349F3A46-BE22-95B9-5D62-822D1CE1D56D">
+<Column name="Transakcja_ID_Transakcji" id="2DAF840D-091D-8C57-32C6-963FC154A27D">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>957C2375-6177-C619-E743-F126BBD307E1</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -79,43 +79,60 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="7AB8A191-CB8B-0EE4-91DE-FF2A0719B75A" referredColumn="4575B9C9-4D6B-F17F-FCF0-8D5BB22A8C81"/>
+<colAssociation fkAssociation="FDB871C7-1D96-F859-07AF-EA040A7C8C00" referredColumn="5AECF169-9D25-251B-A7C1-246E58209FCE"/>
+</associations>
+</Column>
+<Column name="Transakcja_ID_Sklepu" id="09B3F712-8BA0-F8DE-057A-9A53AFC6B1A4">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
+<generatorID>EEE13A4E-B672-F23F-C83F-1BBAC42C3774</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FDB871C7-1D96-F859-07AF-EA040A7C8C00" referredColumn="22BB56A6-2229-BE98-AD20-BAB191D77595"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="2433C046-BA3A-BD46-7D39-9625F52CF9C2" name="Reklamacja_PK">
+<ind_PK_UK id="68FCB1F6-FAB2-0897-32E9-D1450716A7AD" name="Reklamacja_PK">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>BB478E1D-8C49-ECFB-D633-72A61DBA6BC0</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="8881262E-BC3F-ED4A-CD5A-650FECB4BA3F"/>
+<colUsage columnID="289E5B7E-C875-107F-E8C8-4551CD62EF4B"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="CFBAD16D-D100-5CD2-C9AB-0F36D2A5332E" name="Reklamacja__IDX">
+<ind_PK_UK id="7A1E6F20-C77E-2755-E0F4-2E6C14748D50" name="Reklamacja__IDX">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
 <indexState>Unique Plain Index</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <relationGeneratorID>4BFE5C96-3060-9DCE-A593-575B6511E47C</relationGeneratorID>
 <indexColumnUsage>
-<colUsage columnID="349F3A46-BE22-95B9-5D62-822D1CE1D56D"/>
+<colUsage columnID="2DAF840D-091D-8C57-32C6-963FC154A27D"/>
+<colUsage columnID="09B3F712-8BA0-F8DE-057A-9A53AFC6B1A4"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E7DE4808-CA4C-48DB-D46A-BC0E2727E390" name="Reklamacja_Transakcja_FK">
+<ind_PK_UK id="28E915ED-EFC3-A2D2-58A1-6BA384BD66BA" name="Reklamacja_Transakcja_FK">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>4BFE5C96-3060-9DCE-A593-575B6511E47C</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="349F3A46-BE22-95B9-5D62-822D1CE1D56D"/>
+<colUsage columnID="2DAF840D-091D-8C57-32C6-963FC154A27D"/>
+<colUsage columnID="09B3F712-8BA0-F8DE-057A-9A53AFC6B1A4"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

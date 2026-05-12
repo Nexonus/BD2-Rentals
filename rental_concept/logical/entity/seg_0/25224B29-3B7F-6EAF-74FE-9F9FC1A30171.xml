@@ -3,6 +3,9 @@
 <createdBy>Jan</createdBy>
 <createdTime>2026-04-21 20:23:43 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -18,6 +21,9 @@
 <createdTime>2026-04-21 20:24:59 UTC</createdTime>
 <notes><![CDATA[ID do wynajmowanego wyposażenia rowerowego, np. kasku.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -28,6 +34,9 @@
 <createdTime>2026-04-21 20:27:42 UTC</createdTime>
 <notes><![CDATA[Nazwa produktu: Kask Rowerowy Brante Bruno MX 150]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -39,6 +48,9 @@
 <createdTime>2026-04-21 20:25:41 UTC</createdTime>
 <notes><![CDATA[Kategoria produktu: Kask, Odblaski, Światło, Dzwonek]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -50,6 +62,9 @@
 <createdTime>2026-04-21 20:26:37 UTC</createdTime>
 <notes><![CDATA[Cena wynajmu dodatku rowerowego przez klienta: np. 49.99 zł.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT026</logicalDatatype>
@@ -61,6 +76,9 @@
 <createdBy>Jan</createdBy>
 <createdTime>2026-04-21 21:06:42 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -76,6 +94,9 @@
 
 Opcjonalny atrybut.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -89,6 +110,10 @@ Opcjonalny atrybut.]]></notes>
 <createdBy>Jan</createdBy>
 <createdTime>2026-04-21 20:25:18 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="false"/>
+</engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>3E251E13-EC8A-AC55-7768-E1F874E87CF1</attributeRef>

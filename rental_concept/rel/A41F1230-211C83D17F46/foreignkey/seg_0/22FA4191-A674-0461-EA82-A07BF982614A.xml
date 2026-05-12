@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="22FA4191-A674-0461-EA82-A07BF982614A" containerWithKeyObject="95886DE0-7D2C-4472-0102-32411B5DB7B9" localFKIndex="54D52EBB-E667-0F72-8D04-0DF5087A5D5D" name="Zakup_Sprzętu_Akcesoria_FK">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
+<generatorID>F05AFE1C-9534-8760-5600-E642C3A65B23</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referredTableLongName>Akcesoria</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>121C7890-4C45-6876-6132-CFCCE7A830B6</referredTableID>
+<keyObject>0687038B-8F4F-D009-0A3D-2C787CC2F344</keyObject>
+<referredKeyID>0687038B-8F4F-D009-0A3D-2C787CC2F344</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_Produktu</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

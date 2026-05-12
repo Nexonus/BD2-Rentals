@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="832FC825-98EF-7B64-882D-4E35A7167C49" name="Sklep">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="43BB9E8D-802C-E42C-AF95-B9192AD98CA5" name="Sklep">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>367B54C8-EE17-F520-3652-2563ABBD0DD4</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_Sklepu" id="2CA1D138-FDD2-1EC1-F051-841464FB2912">
+<Column name="ID_Sklepu" id="400A89C7-FBC3-5A88-54D9-1327D675F928">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>FA568431-94C7-5F57-9265-83075C14A3BB</generatorID>
 <notes><![CDATA[ID Sklepu w jakim dokonujemy transakcji..]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
@@ -20,9 +20,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Miasto" id="86B2D429-DA16-D786-2D5C-0AE63B3DEA3B">
+<Column name="Miasto" id="369704A4-8641-0166-E1A0-62C88B1AF849">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>2B2F6BFB-9FBB-4A9C-0A1B-9C70863388A2</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -32,9 +32,9 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Adres" id="7F5A5A5B-E46F-42BB-5743-A9FECEB05D18">
+<Column name="Adres" id="F5891814-9B92-1C3B-4445-6FB5D96F8AFA">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>6F69AFE2-A0EF-966E-E59A-ADFAE14D9699</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -44,9 +44,9 @@
 <ownDataTypeParameters>150,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Kod_Pocztowy" id="DD0CD4D9-4848-4786-9C11-FF7D3B5B49A8">
+<Column name="Kod_Pocztowy" id="9F099D9E-A57B-0504-EF57-1EC5925BD4FA">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>4F086361-FAA6-9329-CF48-7DB694A012FE</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -56,44 +56,18 @@
 <ownDataTypeParameters>5,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Transakcja_ID_Transakcji" id="59ACB6F8-C75C-7FD5-1875-D92E41FF8EBD">
-<createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
-<generatorID>82249847-8690-D42F-9CA9-5238D8D86AFC</generatorID>
-<ownerDesignName>rental_concept</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="7F517E10-80A4-7F62-EB0F-F18832631077" referredColumn="4575B9C9-4D6B-F17F-FCF0-8D5BB22A8C81"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="89CE9F38-BC57-D284-67CC-59FBD25C2AA9" name="Sklep_PK">
+<ind_PK_UK id="BF19EA7D-4065-2658-B100-0E628B704E43" name="Sklep_PK">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>329F6006-F952-8A21-62C2-AFC05986A2E2</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="2CA1D138-FDD2-1EC1-F051-841464FB2912"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="9C80E809-FB96-C520-8031-1173B2F411CB" name="Sklep_Transakcja_FK">
-<createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
-<generatorID>F32EEF5A-A884-4F13-A505-A8269E9BB70A</generatorID>
-<ownerDesignName>rental_concept</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="59ACB6F8-C75C-7FD5-1875-D92E41FF8EBD"/>
+<colUsage columnID="400A89C7-FBC3-5A88-54D9-1327D675F928"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

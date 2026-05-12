@@ -3,6 +3,9 @@
 <createdBy>alexd</createdBy>
 <createdTime>2026-04-21 14:35:12 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -16,6 +19,9 @@
 <createdBy>alexd</createdBy>
 <createdTime>2026-04-21 14:35:33 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -26,6 +32,9 @@
 <createdTime>2026-04-21 14:36:27 UTC</createdTime>
 <notes><![CDATA[W ramach obsługi klienta wymagane jest pozyskanie danych na temat jego imienia i nazwiska. Zakładamy odgórnie, że dane są przechowywane i wykorzystywane zgodnie z RODO.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -37,6 +46,9 @@
 <createdTime>2026-04-21 20:32:42 UTC</createdTime>
 <notes><![CDATA[W ramach obsługi klienta wymagane jest pozyskanie danych na temat jego imienia i nazwiska. Zakładamy odgórnie, że dane są przechowywane i wykorzystywane zgodnie z RODO.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -48,6 +60,9 @@
 <createdTime>2026-04-21 20:33:15 UTC</createdTime>
 <notes><![CDATA[Teoretycznie opcjonalny parametr, ale również może się przydać w innych celach - np przy dochodzeniu czy rower nie został przewieziony poza granice kraju.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -61,6 +76,9 @@
 <notes><![CDATA[- Standardowe minimum dla telefonów komórkowych + znaki specjalne (20 znaków).
 - Telefon kontaktowy do klienta w razie gdyby była potrzeba, aby przypomnieć o zwrocie pojazdu.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -72,6 +90,9 @@
 <createdTime>2026-04-21 20:38:04 UTC</createdTime>
 <notes><![CDATA[Nr. PESEL dla klientów wypożyczających rowery. Przy zakupie akcesoriów nie jest on wymagany. Podobnie dzieje się, gdy osoba jest spoza Polski.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT025</logicalDatatype>
@@ -84,6 +105,10 @@
 <createdBy>alexd</createdBy>
 <createdTime>2026-04-21 14:36:09 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="false"/>
+</engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>3BA6323D-20B8-BE22-7B20-53173CA60D3B</attributeRef>

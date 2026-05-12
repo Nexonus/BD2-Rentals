@@ -3,11 +3,14 @@
 <createdBy>Jan</createdBy>
 <createdTime>2026-05-06 23:15:20 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <sourcePk>48D746E6-0DE8-B373-61F5-653ACA958390</sourcePk>
 <identifying>false</identifying>
 <nameOnSource>dotyczy</nameOnSource>
 <nameOnTarget>jest częścią</nameOnTarget>
-<optionalSource>true</optionalSource>
+<optionalSource>false</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
 <sourceEntity>1AFB4ED4-0648-D986-E62A-6F3360B96364</sourceEntity>
