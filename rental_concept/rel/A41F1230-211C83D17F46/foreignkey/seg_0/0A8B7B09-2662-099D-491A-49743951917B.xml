@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0A8B7B09-2662-099D-491A-49743951917B" containerWithKeyObject="3C5AF47D-86AC-8FB4-1D8B-CDB991C85324" localFKIndex="51E6BDDB-80A7-BC24-80BE-DD31029F202D" name="Rower_Wypożyczenie_FK">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
+<generatorID>71810AE9-DC44-E032-ABEA-C82379252718</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<referredTableLongName>Wypożyczenie</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>875237C2-FDBE-4743-B054-5B5C8F63B38C</referredTableID>
+<keyObject>CB717394-4FB6-2DDC-D84D-C131DEEC858E</keyObject>
+<referredKeyID>CB717394-4FB6-2DDC-D84D-C131DEEC858E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_Wypożyczenia,Transakcja_ID_Transakcji,Transakcja_Sklep_ID_Sklepu</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

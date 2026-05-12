@@ -29,12 +29,17 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.TVNote" oid="2DA20622-077B-C545-22E9-30CF0AF5BE7F" otype="Note" vid="A0B696EF-DD4A-0EF1-49EC-B09AEB7DCE5D">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="200" y="508" width="170" height="50"/>
+<bounds x="184" y="515" width="187" height="37"/>
 <comment>Akcesoria są przedmiotami, które można u nas zakupić. Nie są zwrotne.</comment>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="367B54C8-EE17-F520-3652-2563ABBD0DD4" otype="Entity" vid="3896A2DC-9B13-4C5F-BFBE-1CAD5DDC6266">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <bounds x="625" y="319" width="186" height="125"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="47171939-777F-4A47-25F9-75D149132F34" otype="Note" vid="5A3F65B9-CE23-B643-3360-9FDC94A45EC5">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="513" y="288" width="384" height="22"/>
+<comment>Transakcja musi wymagać i dotyczyć konkretnego sklepu - zw. identyfikujący.</comment>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.TVNote" oid="7103478B-AC53-2EEA-726C-895B4EB4795C" otype="Note" vid="0ED0ADBC-1703-D2E9-6635-E6991E5846DB">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -67,6 +72,13 @@ Oferowane usługi:
 - Sprzedaż akcesoriów (kaski, dzwonki, itd.) 
 - Klientami są pełnoletnie osoby, wymogiem samego wynajmu jest podanie numeru PESEL.</comment>
 </OView>
+<OView class="oracle.dbtools.crest.swingui.TVNote" oid="B3385509-EF1C-B0A5-132B-4541F2BF52E4" otype="Note" vid="3333028D-CAD4-A9F0-CFD7-F4DA9EB36929">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="517" y="590" width="289" height="97"/>
+<comment>Istnienie akcesoriów bez zakupu jest bezsensowne. Zakup jest opcjonalny, ale akcesoria muszą być sprzedawana w obrębie konkretnego zakupu.
+
+Podobnie z wypożyczeniem roweru.</comment>
+</OView>
 <OView class="oracle.dbtools.crest.swingui.TVNote" oid="BA73E8BB-8521-1D4D-A6B8-F826779317A6" otype="Note" vid="3D36B1B2-9AE8-B196-99C7-220B1AC777F1">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <bounds x="928" y="572" width="182" height="83"/>
@@ -91,28 +103,19 @@ Oferowane usługi:
 </OView>
 </objectViews>
 <connectors>
-<Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="055C5350-FCFC-5038-CC7E-13D314549BC1" otype="Relation" vid_source="BD15F84D-71AE-7F95-D741-3AD9EE2FF5C2" vid_target="3896A2DC-9B13-4C5F-BFBE-1CAD5DDC6266">
-<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<backgroundColor>-16777216</backgroundColor>
-<lineWidth>1</lineWidth>
-<points>
-<point x="718" y="242"/>
-<point x="718" y="319"/>
-</points>
-</Connector>
 <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="3F50F087-AEF1-1C9C-6405-D289C67EEEB4" otype="Relation" vid_source="FAC9E4B8-8568-D255-8000-90EB741FA6A4" vid_target="5DF63456-FA09-623D-63CA-2F1C1E65C6F4">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <sourceLabel class="oracle.dbtools.crest.model.design.Label">
 <site>0</site>
-<labelBounds x="180" y="397" width="60" height="34"/>
+<labelBounds x="180" y="390" width="57" height="41"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </sourceLabel>
 <targetLabel class="oracle.dbtools.crest.model.design.Label">
 <site>2</site>
-<labelBounds x="221" y="434" width="98" height="53"/>
+<labelBounds x="219" y="434" width="100" height="59"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </targetLabel>
@@ -196,7 +199,7 @@ Oferowane usługi:
 </sourceLabel>
 <targetLabel class="oracle.dbtools.crest.model.design.Label">
 <site>2</site>
-<labelBounds x="550" y="215" width="70" height="30"/>
+<labelBounds x="548" y="215" width="72" height="32"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </targetLabel>
@@ -211,7 +214,7 @@ Oferowane usługi:
 <lineWidth>1</lineWidth>
 <sourceLabel class="oracle.dbtools.crest.model.design.Label">
 <site>0</site>
-<labelBounds x="413" y="500" width="74" height="30"/>
+<labelBounds x="413" y="517" width="74" height="31"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </sourceLabel>
@@ -253,7 +256,7 @@ Oferowane usługi:
 <lineWidth>1</lineWidth>
 <sourceLabel class="oracle.dbtools.crest.model.design.Label">
 <site>0</site>
-<labelBounds x="181" y="612" width="84" height="31"/>
+<labelBounds x="181" y="608" width="86" height="35"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </sourceLabel>
@@ -274,13 +277,13 @@ Oferowane usługi:
 <lineWidth>1</lineWidth>
 <sourceLabel class="oracle.dbtools.crest.model.design.Label">
 <site>0</site>
-<labelBounds x="517" y="342" width="79" height="39"/>
+<labelBounds x="517" y="339" width="82" height="42"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </sourceLabel>
 <targetLabel class="oracle.dbtools.crest.model.design.Label">
 <site>2</site>
-<labelBounds x="544" y="384" width="75" height="88"/>
+<labelBounds x="542" y="384" width="77" height="102"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </targetLabel>

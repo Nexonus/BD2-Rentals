@@ -3,6 +3,9 @@
 <createdBy>alexd</createdBy>
 <createdTime>2026-05-05 21:37:38 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -16,6 +19,9 @@
 <createdBy>alexd</createdBy>
 <createdTime>2026-05-05 21:38:12 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -25,6 +31,9 @@
 <createdBy>alexd</createdBy>
 <createdTime>2026-05-05 21:39:43 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -35,6 +44,9 @@
 <createdBy>alexd</createdBy>
 <createdTime>2026-05-05 21:40:14 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -45,6 +57,9 @@
 <createdBy>alexd</createdBy>
 <createdTime>2026-05-05 21:41:02 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -55,6 +70,9 @@
 <createdBy>alexd</createdBy>
 <createdTime>2026-05-05 21:41:23 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -66,6 +84,9 @@
 <createdBy>alexd</createdBy>
 <createdTime>2026-05-05 21:41:59 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
@@ -77,6 +98,10 @@
 <createdBy>alexd</createdBy>
 <createdTime>2026-05-05 21:38:42 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="false"/>
+</engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>B66DD117-6CEF-E352-A50E-2560EC3AEBBF</attributeRef>

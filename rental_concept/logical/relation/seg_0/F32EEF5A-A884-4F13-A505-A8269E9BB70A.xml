@@ -3,15 +3,19 @@
 <createdBy>Jan</createdBy>
 <createdTime>2026-05-06 23:37:30 UTC</createdTime>
 <ownerDesignName>rental_concept</ownerDesignName>
+<engineerTo>
+<item key="F6E3BDB5-5FDA-7DE4-C2FA-128387AC1576" value="true"/>
+</engineerTo>
 <sourcePk>129ECA6F-C64C-41AE-CFBC-49070A0A265C</sourcePk>
-<identifying>false</identifying>
+<targetPk>329F6006-F952-8A21-62C2-AFC05986A2E2</targetPk>
+<identifying>true</identifying>
 <nameOnSource>została zawarta</nameOnSource>
-<nameOnTarget>jest miejscem</nameOnTarget>
-<optionalSource>true</optionalSource>
-<optionalTarget>false</optionalTarget>
-<sourceCardinality>1</sourceCardinality>
+<nameOnTarget>obsługuje</nameOnTarget>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
 <sourceEntity>8E90089E-0173-A4F4-3BB7-32FBF445FCF1</sourceEntity>
-<targetCardinalityString>*</targetCardinalityString>
+<targetCardinalityString>1</targetCardinalityString>
 <targetEntity>367B54C8-EE17-F520-3652-2563ABBD0DD4</targetEntity>
 <transferable>true</transferable>
 <deleteRule>NO ACTION</deleteRule>

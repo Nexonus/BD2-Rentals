@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2433E6A9-787B-1E44-9E69-5C0F43107D70" name="Zakup_Sprzętu">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="95886DE0-7D2C-4472-0102-32411B5DB7B9" name="Zakup_Sprzętu">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>7B0CBF4D-ED78-2FEE-239C-BCF3DB1B31A6</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_Zakupu" id="FE8D36E3-F8C5-D5EF-DD25-1F0E4D63296E">
+<Column name="ID_Zakupu" id="83853B14-EC45-7188-9D54-268425DF2337">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>9A53B1E9-2C76-719F-EE15-55ED15156E0D</generatorID>
 <notes><![CDATA[ID dla sprzętu rowerowego, który może zostać zakupiony przez klienta.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
@@ -20,9 +20,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Transakcja_ID_Transakcji" id="59E6C9AD-9AB4-4DD2-F05B-CB43770C0EB6">
+<Column name="Transakcja_ID_Transakcji" id="54468BC9-44C4-88A8-5ADB-2F0B362B2BA6">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>E3E9E543-C9DC-664F-9FDE-78FEA3D89390</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -32,12 +32,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="AC9AF711-767A-6FCC-CBCC-9A991FDE1C4F" referredColumn="4575B9C9-4D6B-F17F-FCF0-8D5BB22A8C81"/>
+<colAssociation fkAssociation="5878D350-0CA4-4254-3B16-8308A5F16F69" referredColumn="5AECF169-9D25-251B-A7C1-246E58209FCE"/>
 </associations>
 </Column>
-<Column name="Akcesoria_ID_Produktu" id="27EA4C9F-1DAC-61E3-7DBE-B40E6819F1F3">
+<Column name="Akcesoria_ID_Produktu" id="C7600953-8A15-3E3B-AC1D-F6A469E008F7">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>AFFFA24F-1E97-56D5-ADE7-19D92D1880F0</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -47,12 +47,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="0D4D1E41-0E88-0F14-481F-76DA98CF9864" referredColumn="80F1DCAE-C1D3-53FF-BDC4-74498BB5E615"/>
+<colAssociation fkAssociation="22FA4191-A674-0461-EA82-A07BF982614A" referredColumn="1343B820-78DA-6046-5B1F-EE0890592450"/>
 </associations>
 </Column>
-<Column name="Ilość" id="D9BC5864-62D6-D54B-C77E-689261621A58">
+<Column name="Ilość" id="F370FD5E-BB00-0E88-8B2D-66CF8FAE1252">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>25AB3CFC-330A-4707-C9DB-DEEE96EBA0C1</generatorID>
 <notes><![CDATA[Ile produktów danego typu sprzedano.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
@@ -62,9 +62,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Cena_Sprzedaży" id="B1A6629E-B424-0EE6-69AF-2A9B762474DD">
+<Column name="Cena_Sprzedaży" id="2515C6EA-1C41-49B7-1665-20CB6761AABB">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>62F047D9-1A6B-0C80-42B8-E7313C2A092F</generatorID>
 <notes><![CDATA[Historyczny rekord sprzedaży produktu danego dnia o danej cenie.]]></notes>
 <ownerDesignName>rental_concept</ownerDesignName>
@@ -76,41 +76,58 @@
 <ownDataTypeParameters>,10,4</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="Transakcja_Sklep_ID_Sklepu" id="F2CA4D5D-2C38-AF82-C861-3F0869794810">
+<createdBy>Jan</createdBy>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
+<generatorID>BB29967B-EE7C-D9CD-C2E7-4A9C046A89C5</generatorID>
+<ownerDesignName>rental_concept</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5878D350-0CA4-4254-3B16-8308A5F16F69" referredColumn="22BB56A6-2229-BE98-AD20-BAB191D77595"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="FEAC499F-19CD-701E-3431-72628F796767" name="Zakup_Sprzętu_PK">
+<ind_PK_UK id="290E2138-21F6-861F-5A17-09E63236213A" name="Zakup_Sprzętu_PK">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>11934BCD-53BC-F963-76BF-CB733EBDD6A7</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="FE8D36E3-F8C5-D5EF-DD25-1F0E4D63296E"/>
-<colUsage columnID="59E6C9AD-9AB4-4DD2-F05B-CB43770C0EB6"/>
+<colUsage columnID="83853B14-EC45-7188-9D54-268425DF2337"/>
+<colUsage columnID="54468BC9-44C4-88A8-5ADB-2F0B362B2BA6"/>
+<colUsage columnID="F2CA4D5D-2C38-AF82-C861-3F0869794810"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="B070643F-ED0A-757C-1464-57108F612A55" name="Zakup_Sprzętu_Akcesoria_FK">
+<ind_PK_UK id="54D52EBB-E667-0F72-8D04-0DF5087A5D5D" name="Zakup_Sprzętu_Akcesoria_FK">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>F05AFE1C-9534-8760-5600-E642C3A65B23</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="27EA4C9F-1DAC-61E3-7DBE-B40E6819F1F3"/>
+<colUsage columnID="C7600953-8A15-3E3B-AC1D-F6A469E008F7"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="F33CCF4E-315E-F028-FADE-D0F03FF7AB88" name="Zakup_Sprzętu_Transakcja_FK">
+<ind_PK_UK id="5682A171-1EAF-D0E0-840A-E526AB6A5E60" name="Zakup_Sprzętu_Transakcja_FK">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>B4B67D33-99D3-9905-F5A1-FC0D7B52F929</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="59E6C9AD-9AB4-4DD2-F05B-CB43770C0EB6"/>
+<colUsage columnID="54468BC9-44C4-88A8-5ADB-2F0B362B2BA6"/>
+<colUsage columnID="F2CA4D5D-2C38-AF82-C861-3F0869794810"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

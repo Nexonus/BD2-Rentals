@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E8798D0C-8C3F-B73E-AA3C-317D7529AC40" name="Pracownik">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CA327A43-9061-8849-19E6-E76887D6A8A4" name="Pracownik">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>72679A94-C31E-60BB-762C-048CB2D66B3A</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_Pracownika" id="459D1D84-6FAA-B792-D7CA-87732025D0B5">
+<Column name="ID_Pracownika" id="B8EF8FDF-9321-8CF8-648F-A72FE3EC96A2">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>B66DD117-6CEF-E352-A50E-2560EC3AEBBF</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -19,9 +19,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Imię" id="0803056B-FDA3-FC06-37CA-C2899A0A5863">
+<Column name="Imię" id="7272801D-3E07-B41E-E27C-88A83FD7AE72">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>6783F642-80FF-F445-FC80-8CFDD36F2271</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -31,9 +31,9 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Nazwisko" id="083E20C6-A663-39D1-7406-5DDEDCB198D7">
+<Column name="Nazwisko" id="FC48B779-8228-11B8-6856-650EB3F85279">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>60B97D59-1A7A-C752-A5DD-CC0F8F1A08FB</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -43,9 +43,9 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Stanowisko" id="C4620E7C-DEC9-AA91-048F-ADA4F8692E46">
+<Column name="Stanowisko" id="3A916E1B-005A-2A8C-35D4-57D54C1C718C">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>0485C5AA-CB20-6F2A-DBFC-9D785899DB2F</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -55,9 +55,9 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Telefon" id="028DB1FD-AEE0-8CA6-7724-58E320F5729B">
+<Column name="Telefon" id="51EAEA54-2A2B-F20D-64CF-620358596F3E">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>46AFD756-D767-E4F1-CC0E-53C82489B561</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -68,9 +68,9 @@
 <ownDataTypeParameters>15,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Data_Zatrudnienia" id="6F32EEFA-B822-2E29-E336-49DC21E6DAF0">
+<Column name="Data_Zatrudnienia" id="30C9979C-A5CD-5C39-1C36-1EAA560429C4">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>47D41C0C-E815-3110-9362-D3C3B201ADFE</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -81,16 +81,16 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="89EB0D60-F6CE-0C8A-0025-13BA746C2E86" name="Pracownik_PK">
+<ind_PK_UK id="A055CCAE-C5C0-8EC6-A8C0-B0CC62B1A191" name="Pracownik_PK">
 <createdBy>Jan</createdBy>
-<createdTime>2026-05-07 00:05:37 UTC</createdTime>
+<createdTime>2026-05-12 18:52:48 UTC</createdTime>
 <generatorID>15DB80B6-4225-7D0F-AB11-6EF37B8BC361</generatorID>
 <ownerDesignName>rental_concept</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="459D1D84-6FAA-B792-D7CA-87732025D0B5"/>
+<colUsage columnID="B8EF8FDF-9321-8CF8-648F-A72FE3EC96A2"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
