@@ -11,11 +11,16 @@ class Pracownik(models.Model):
         ("KI", "Kierownik"),
         ("SE", "Serwisant"),
     ]
+    
     imie = models.CharField(max_length=30)
     nazwisko = models.CharField(max_length=40)
     stanowisko = models.CharField(max_length=2, choices=STANOWISKA)
     telefon = PhoneNumberField(null=True, blank=True, unique=True, default=None)
     data_zatrudnienia = models.DateField(null=False, default=date.today)
+
+    class Meta:
+        verbose_name = "Pracownik"
+        verbose_name_plural = "Pracownicy"
 
     def __str__(self):
         return f"{self.stanowisko} {self.imie} {self.nazwisko}"

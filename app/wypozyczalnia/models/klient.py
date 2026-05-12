@@ -23,6 +23,10 @@ class Klient(models.Model):
         help_text='11 cyfr'
     )
 
+    class Meta:
+        verbose_name = "Klient"
+        verbose_name_plural = "Klienci"
+
     def __str__(self):
         return f"{self.imie} {self.nazwisko}"
 

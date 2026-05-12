@@ -22,5 +22,9 @@ class Reklamacja(models.Model):
     decyzja = models.CharField(max_length=1, choices=DECYZJE, blank=True)
     opis_problemu = models.CharField(max_length=1000)
 
+    class Meta:
+        verbose_name = "Reklamacja"
+        verbose_name_plural = "Reklamacje"
+
     def __str__(self):
         return f"Reklamacja {self.id} - {self.transakcja} - {self.status}"
