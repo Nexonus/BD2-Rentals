@@ -1,9 +1,5 @@
 from django.db import models
-from django.core.validators import RegexValidator
-from phonenumber_field.modelfields import PhoneNumberField
 from djmoney.models.fields import MoneyField
-from datetime import date
-from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Transakcja(models.Model):
     #--- FK ---
@@ -42,7 +38,7 @@ class Transakcja(models.Model):
         verbose_name_plural = "Transakcje"
 
     def __str__(self):
-        return f"Transakcja nr {self.id} - Sklep: {self.sklep.miasto}"
+        return f"TR-{self.id:04d}"
     @property
     def utarg_sprzedaze(self):
         suma_akcesoria = sum(pozycja.utarg() for pozycja in self.sprzedaze.all()) # Całkowita suma pieniężna ze sprzedaży.
@@ -53,3 +49,34 @@ class Transakcja(models.Model):
     @property
     def utarg_calkowity(self):
         return self.utarg_sprzedaze + self.utarg_wynajmy
+
+class Reklamacja(models.Model):
+    transakcja = models.ForeignKey(
+        'Transakcja',
+        on_delete=models.CASCADE,
+        related_name='reklamacje'
+    )
+    STATUSY ={
+        "1": "Nowa",
+        "2" : "W toku",
+        "3": "Rozpatrzono",
+        "4": "Odłożono"
+    }
+
+    DECYZJE ={
+        "P": "Przyjęto",
+        "N": "Nie przyjęto",
+        "": "Oczekuje"
+    }
+
+    status = models.CharField(max_length=1, choices=STATUSY)
+    data_zgloszenia = models.DateField(auto_now_add=True)
+    decyzja = models.CharField(max_length=1, choices=DECYZJE, blank=True)
+    opis_problemu = models.TextField(max_length=1000, verbose_name="Opis usterki")
+
+    class Meta:
+        verbose_name = "Reklamacja"
+        verbose_name_plural = "Reklamacje"
+
+    def __str__(self):
+        return f"RE-{self.id:04d} ({self.transakcja}) - {self.get_status_display()}"

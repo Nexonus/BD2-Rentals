@@ -1,0 +1,1 @@
+Get-Content query.sql | python manage.py dbshell
