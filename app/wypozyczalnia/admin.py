@@ -11,6 +11,8 @@ from .models.wypozyczenia import Wypozyczenie, Rower, SerwisRoweru
 # py manage.py createsuperuser
 # py manage.py runserver 
 
+admin.site.site_header = "BD2 Rentals Management"
+admin.site.site_title = "BD2 Rentals Admin"
 
 @admin.register(ZakupSprzetu)
 class ZakupSprzetuAdmin(admin.ModelAdmin):
@@ -62,9 +64,33 @@ class SerwisRoweruAdmin(admin.ModelAdmin):
     list_filter = ('data_rozpoczecia', 'data_zakonczenia')
     search_fields = ('opis_usterki',)
 
-admin.site.register(Sklep)
-admin.site.register(Akcesoria)
+@admin.register(Klient)
+class KlientAdmin(admin.ModelAdmin):
+    # Shows their basic contact info directly in the table
+    list_display = ('id', 'imie', 'nazwisko', 'telefon', 'pesel')
+    # Allows staff to instantly search for a customer by last name, phone, or PESEL
+    search_fields = ('nazwisko', 'telefon', 'pesel')
+    list_filter = ('kraj',)
+
+@admin.register(Pracownik)
+class PracownikAdmin(admin.ModelAdmin):
+    list_display = ('id', 'imie', 'nazwisko', 'stanowisko', 'data_zatrudnienia')
+    search_fields = ('nazwisko', 'stanowisko')
+    # Easily filter to see only Mechanics or only Cashiers
+    list_filter = ('stanowisko',)
+
+@admin.register(Akcesoria)
+class AkcesoriaAdmin(admin.ModelAdmin):
+    list_display = ('nazwa', 'kategoria', 'cena', 'rabat', 'kolor')
+    search_fields = ('nazwa', 'kategoria')
+    list_filter = ('kategoria', 'kolor')
+    # Allows the admin to quickly change the discount (rabat) without opening the item
+    list_editable = ('rabat',)
+
+@admin.register(Sklep)
+class SklepAdmin(admin.ModelAdmin):
+    list_display = ('id', 'miasto', 'adres', 'kod_pocztowy')
+    search_fields = ('miasto', 'adres')
+
 admin.site.register(Transakcja)
-admin.site.register(Klient)
-admin.site.register(Pracownik)
 admin.site.register(Reklamacja)
