@@ -1,3 +1,38 @@
-{% extends "wypozyczalnia/base.html" %} {% block content %}
-<h1>{{ message }}</h1>
+{% extends 'wypozyczalnia/base.html' %} 
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Dostępne Rowery</h1>
+    
+    <div class="row">
+        {% for rower in rowery %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ rower.marka }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ rower.get_typ_roweru_display }}</h6>
+                    <hr>
+                    <p class="card-text">
+                        <strong>Kolor:</strong> {{ rower.kolor }}<br>
+                        <strong>Kraj:</strong> {{ rower.kraj }}<br>
+                        <strong>Numer Seryjny:</strong> {{ rower.nr_seryjny }}
+                    </p>
+                    <h5 class="text-primary">{{ rower.cena_za_godzine }} / h</h5>
+                </div>
+                <div class="card-footer bg-transparent">
+                    {% if rower.dostepnosc %}
+                        <span class="badge bg-success w-100 py-2">Dostępny do wypożyczenia</span>
+                    {% else %}
+                        <span class="badge bg-danger w-100 py-2">Aktualnie w trasie</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="alert alert-warning" role="alert">
+            Brak rowerów w bazie danych. Dodaj je w panelu administratora!
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock content %}

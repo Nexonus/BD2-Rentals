@@ -49,12 +49,22 @@ class WypozyczenieAdmin(admin.ModelAdmin):
     
     pokaz_podsumowanie.short_description = "Podsumowanie finansowe"
 
+@admin.register(Rower)
+class RowerAdmin(admin.ModelAdmin):
+    list_display = ('nr_seryjny', 'marka', 'typ_roweru', 'cena_za_godzine', 'dostepnosc')
+    search_fields = ('nr_seryjny', 'marka')
+    list_filter = ('typ_roweru', 'dostepnosc')
+    list_editable = ('dostepnosc',) # Admin can quickly change availability directly from the list
+
+@admin.register(SerwisRoweru)
+class SerwisRoweruAdmin(admin.ModelAdmin):
+    list_display = ('rower', 'data_rozpoczecia', 'data_zakonczenia', 'koszt_naprawy')
+    list_filter = ('data_rozpoczecia', 'data_zakonczenia')
+    search_fields = ('opis_usterki',)
+
 admin.site.register(Sklep)
 admin.site.register(Akcesoria)
 admin.site.register(Transakcja)
-admin.site.register(Rower)
 admin.site.register(Klient)
 admin.site.register(Pracownik)
 admin.site.register(Reklamacja)
-admin.site.register(SerwisRoweru)
-
