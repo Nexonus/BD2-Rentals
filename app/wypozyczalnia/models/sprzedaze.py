@@ -97,7 +97,7 @@ class Akcesoria(models.Model):
         ("C4", "Koszyki")
     ]
 
-    nazwa = models.CharField(max_length=150)
+    nazwa = models.CharField(max_length=200)
     kategoria = models.CharField(max_length=3, choices=KATEGORIE)
     cena = MoneyField(
         decimal_places=2,

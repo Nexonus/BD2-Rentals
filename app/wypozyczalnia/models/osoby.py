@@ -5,8 +5,8 @@ from datetime import date
 from django_countries.fields import CountryField
 
 class Klient(models.Model):
-    imie = models.CharField(max_length=30)
-    nazwisko = models.CharField(max_length=40)
+    imie = models.CharField(max_length=100)
+    nazwisko = models.CharField(max_length=100)
     kraj = CountryField(blank=True)
     telefon = PhoneNumberField(
         null=False, 
@@ -48,8 +48,8 @@ class Pracownik(models.Model):
         ("SE", "Serwisant"),
     ]
     
-    imie = models.CharField(max_length=30)
-    nazwisko = models.CharField(max_length=40)
+    imie = models.CharField(max_length=50)
+    nazwisko = models.CharField(max_length=50)
     stanowisko = models.CharField(max_length=2, choices=STANOWISKA)
     telefon = PhoneNumberField(null=True, blank=True, unique=True, default=None)
     data_zatrudnienia = models.DateField(null=False, default=date.today)

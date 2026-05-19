@@ -72,7 +72,7 @@ class Reklamacja(models.Model):
     status = models.CharField(max_length=1, choices=STATUSY)
     data_zgloszenia = models.DateField(auto_now_add=True)
     decyzja = models.CharField(max_length=1, choices=DECYZJE, blank=True)
-    opis_problemu = models.TextField(max_length=1000, verbose_name="Opis usterki")
+    opis_problemu = models.TextField(max_length=500, verbose_name="Opis usterki")
 
     class Meta:
         verbose_name = "Reklamacja"
