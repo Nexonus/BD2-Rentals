@@ -1,0 +1,21 @@
+{% extends "wypozyczalnia/base.html" %}
+
+{% block title %}Zarejestruj się{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <form method="post" class="card mx-auto col-6 p-3 shadow-sm">
+        <h2>Zarejestruj się</h2>
+        {% csrf_token %}
+
+        {{ form }}
+
+        <button type="submit">Zarejestruj się</button>
+
+        <p>Masz już konto? <a href="{% url 'wypozyczalnia:login' %}">Zaloguj się</a></p>
+    </form>
+</div>
+
+
+{% endblock content %}
