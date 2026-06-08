@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "phonenumber_field",
     "djmoney",
     "wypozyczalnia",
+    "users",
 ]
 
 MIDDLEWARE = [

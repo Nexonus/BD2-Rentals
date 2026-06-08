@@ -9,4 +9,3 @@
 /media/
 /staticfiles/
 **/*.git
-./BD2Appapp/BD2app/settings.py

@@ -3,8 +3,16 @@ from django.core.validators import RegexValidator
 from phonenumber_field.modelfields import PhoneNumberField
 from datetime import date
 from django_countries.fields import CountryField
+from django.conf import settings
 
 class Klient(models.Model):
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name='klient_profil'
+    )
     imie = models.CharField(max_length=100)
     nazwisko = models.CharField(max_length=100)
     kraj = CountryField(blank=True)
