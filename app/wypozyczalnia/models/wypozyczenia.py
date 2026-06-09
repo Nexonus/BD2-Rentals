@@ -1,7 +1,8 @@
 from django.db import models
 from djmoney.models.fields import MoneyField
+from djmoney.money import Money
 from datetime import date
-from decimal import Decimal
+from decimal import Decimal, ROUND_UP
 
 class Wypozyczenie(models.Model):
     transakcja = models.ForeignKey(
@@ -32,7 +33,7 @@ class Wypozyczenie(models.Model):
 
     def koszt_wynajmu(self):
         if not self.termin_zwrotu:
-            return Decimal('0.00')
+            return self.cena_za_godzine * Decimal('0.0')
         
         czas = self.termin_zwrotu - self.data_wypozyczenia
         godziny = Decimal(czas.total_seconds() / 3600) # Zamieniamy na godziny aby obliczyć cenę wynajmu rowera.
@@ -46,11 +47,14 @@ class Wypozyczenie(models.Model):
 
     def kara_za_spoznienie(self):
         mnoznik_kary = Decimal('2.0') 
-        return (self.oblicz_spoznienie() * self.cena_za_godzine * mnoznik_kary).quantize(Decimal('0.01'))
+        kara_amount = (self.oblicz_spoznienie() * self.cena_za_godzine.amount * mnoznik_kary).quantize(Decimal('0.01'))
+        return Money(kara_amount, self.cena_za_godzine.currency)
 
     def koszt_calkowity(self):
         wynajem_podstawowy = self.koszt_wynajmu() 
-        return wynajem_podstawowy + self.kara_za_spoznienie()
+        total = wynajem_podstawowy + self.kara_za_spoznienie()
+        total_amount = total.amount.quantize(Decimal('0.01'), rounding=ROUND_UP)
+        return Money(total_amount, total.currency)
     
     def save(self, *args, **kwargs):
         if not self.pk: 

@@ -73,6 +73,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "wypozyczalnia.context_processors.cart_processor",
             ],
         },
     },
@@ -128,5 +129,6 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+LOGIN_URL = "users:login"
 LOGIN_REDIRECT_URL = "wypozyczalnia:strona_glowna"
 LOGOUT_REDIRECT_URL = "wypozyczalnia:strona_glowna"

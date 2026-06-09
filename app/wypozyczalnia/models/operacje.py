@@ -1,5 +1,8 @@
 from django.db import models
 from djmoney.models.fields import MoneyField
+from django.conf import settings
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes.fields import GenericForeignKey
 
 class Transakcja(models.Model):
     #--- FK ---
@@ -80,3 +83,40 @@ class Reklamacja(models.Model):
 
     def __str__(self):
         return f"RE-{self.id:04d} ({self.transakcja}) - {self.get_status_display()}"
+
+class Koszyk(models.Model):
+    uzytkownik = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='koszyk')
+    utworzono = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Koszyk"
+        verbose_name_plural = "Koszyki"
+
+    def __str__(self):
+        return f"Koszyk - {self.uzytkownik.username}"
+
+class PozycjaKoszyka(models.Model):
+    koszyk = models.ForeignKey(Koszyk, on_delete=models.CASCADE, related_name='pozycje')
+    
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    produkt = GenericForeignKey('content_type', 'object_id')
+    
+    ilosc = models.PositiveIntegerField(default=1)
+
+    class Meta:
+        verbose_name = "Pozycja koszyka"
+        verbose_name_plural = "Pozycje koszyka"
+
+    @property
+    def koszt_calkowity(self):
+        from .sprzedaze import Akcesoria
+        from .wypozyczenia import Rower
+        if isinstance(self.produkt, Akcesoria):
+            return self.produkt.cena_po_rabacie() * self.ilosc
+        elif isinstance(self.produkt, Rower):
+            return self.produkt.cena_za_godzine
+        return 0
+
+    def __str__(self):
+        return f"{self.ilosc} x {self.produkt} w koszyku {self.koszyk.uzytkownik.username}"

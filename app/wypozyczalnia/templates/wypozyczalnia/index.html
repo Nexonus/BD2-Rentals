@@ -21,9 +21,15 @@
                 </div>
                 <div class="card-footer bg-transparent">
                     {% if rower.dostepnosc %}
-                        <span class="badge bg-success w-100 py-2">Dostępny do wypożyczenia</span>
+                        <span class="badge bg-success w-100 py-2 mb-2">Dostępny do wypożyczenia</span>
+                        <a href="{% url 'wypozyczalnia:dodaj_do_koszyka' 'rower' rower.id %}" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-cart-plus"></i> Dodaj do koszyka
+                        </a>
                     {% else %}
-                        <span class="badge bg-danger w-100 py-2">Aktualnie w trasie</span>
+                        <span class="badge bg-danger w-100 py-2 mb-2">Aktualnie w trasie</span>
+                        <button class="btn btn-outline-secondary w-100" disabled>
+                            Niedostępny
+                        </button>
                     {% endif %}
                 </div>
             </div>

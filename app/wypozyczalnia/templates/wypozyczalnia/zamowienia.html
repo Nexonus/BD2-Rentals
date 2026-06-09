@@ -1,0 +1,126 @@
+{% extends "wypozyczalnia/base.html" %} 
+
+{% block extra_css %}
+<style>
+    .accordion-item {
+        background: rgba(0,0,0,0.2) !important;
+        border: 1px solid rgba(255,255,255,0.05) !important;
+        border-radius: 12px !important;
+        margin-bottom: 1rem;
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+    }
+    .accordion-button {
+        background: rgba(255,255,255,0.05) !important;
+        color: #f8fafc !important;
+        box-shadow: none !important;
+    }
+    .accordion-button:not(.collapsed) {
+        background: rgba(99, 102, 241, 0.2) !important;
+        color: #f8fafc !important;
+    }
+    .accordion-button::after {
+        filter: invert(1);
+    }
+    .transaction-details {
+        background: rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock extra_css %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="glass-card">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="section-title mb-0">Moje Zamówienia</h2>
+            <div class="text-muted d-none d-md-block">
+                Zalogowano jako: <strong>{{ klient.imie }} {{ klient.nazwisko }}</strong>
+            </div>
+        </div>
+
+        <div class="accordion" id="ordersAccordion">
+            {% for transakcja in transakcje %}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading{{ transakcja.id }}">
+                    <button class="accordion-button collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ transakcja.id }}" aria-expanded="false" aria-controls="collapse{{ transakcja.id }}">
+                        <div class="d-flex w-100 justify-content-between pe-3">
+                            <span>
+                                <i class="bi bi-receipt me-2"></i>
+                                Transakcja #{{ transakcja.id }}
+                            </span>
+                            <span class="text-muted small align-self-center">
+                                {{ transakcja.data_transakcji|date:"d M Y, H:i" }}
+                            </span>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapse{{ transakcja.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ transakcja.id }}" data-bs-parent="#ordersAccordion">
+                    <div class="accordion-body transaction-details">
+                        <div class="row">
+                            <!-- Wypożyczenia -->
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <h5 class="border-bottom border-secondary pb-2 mb-3">Wypożyczone rowery</h5>
+                                {% if transakcja.wynajmy.all %}
+                                    <ul class="list-group list-group-flush bg-transparent">
+                                    {% for wynajem in transakcja.wynajmy.all %}
+                                        <li class="list-group-item bg-transparent text-light border-secondary">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <div class="fw-bold">{{ wynajem.rower.marka }} {{ wynajem.rower.get_typ_roweru_display }}</div>
+                                                    <div class="small text-muted">Nr: {{ wynajem.rower.nr_seryjny }} | Zarezerwowany do: {{ wynajem.planowany_termin_zwrotu|date:"H:i" }}</div>
+                                                    <div class="text-success mt-1 fw-bold">{{ wynajem.cena_za_godzine.amount }} zł / godz.</div>
+                                                </div>
+                                                {% if not wynajem.termin_zwrotu %}
+                                                <form action="{% url 'wypozyczalnia:zwroc_rower' wynajem.id %}" method="post">
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="btn btn-outline-warning btn-sm">Zwróć rower</button>
+                                                </form>
+                                                {% else %}
+                                                <div class="text-end">
+                                                    <span class="badge bg-secondary mb-1">Zwrócony: {{ wynajem.termin_zwrotu|date:"H:i" }}</span><br/>
+                                                    <span class="text-info fw-bold small">Do zapłaty: {{ wynajem.koszt_calkowity.amount }} zł</span>
+                                                </div>
+                                                {% endif %}
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <p class="text-muted small">Brak wypożyczonych rowerów w tej transakcji.</p>
+                                {% endif %}
+                            </div>
+
+                            <!-- Zakupy -->
+                            <div class="col-md-6">
+                                <h5 class="border-bottom border-secondary pb-2 mb-3">Kupiony sprzęt</h5>
+                                {% if transakcja.sprzedaże.all %}
+                                    <ul class="list-group list-group-flush bg-transparent">
+                                    {% for zakup in transakcja.sprzedaże.all %}
+                                        <li class="list-group-item bg-transparent text-light border-secondary d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <div class="fw-bold">{{ zakup.akcesoria.nazwa }}</div>
+                                                <div class="small text-muted">{{ zakup.ilosc }} szt.</div>
+                                            </div>
+                                            <div class="text-success fw-bold">{{ zakup.utarg.amount }} zł</div>
+                                        </li>
+                                    {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <p class="text-muted small">Brak zakupionych akcesoriów w tej transakcji.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="text-center py-5 text-muted">
+                <i class="bi bi-box-seam display-1 mb-3"></i>
+                <h4>Nie masz jeszcze żadnych zamówień</h4>
+                <a href="{% url 'wypozyczalnia:strona_glowna' %}" class="btn btn-outline-light mt-3">Przejdź do wypożyczalni</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
