@@ -11,8 +11,10 @@ from decimal import Decimal
 
 def strona_glowna(request):
     lista_rowerow = Rower.objects.all()
+    lista_akcesoriow = Akcesoria.objects.all()
     context = {
-        'rowery': lista_rowerow
+        'rowery': lista_rowerow,
+        'akcesoria': lista_akcesoriow
     }
     return render(request, 'wypozyczalnia/index.html', context)
 

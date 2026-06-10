@@ -40,5 +40,39 @@
         </div>
         {% endfor %}
     </div>
+
+    <h1 class="mb-4 mt-5">Dostępne Akcesoria</h1>
+    
+    <div class="row">
+        {% for akcesorium in akcesoria %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ akcesorium.nazwa }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ akcesorium.get_kategoria_display }}</h6>
+                    <hr>
+                    <p class="card-text">
+                        <strong>Kolor:</strong> {% if akcesorium.kolor %}{{ akcesorium.kolor }}{% else %}Brak{% endif %}<br>
+                        {% if akcesorium.rabat and akcesorium.rabat > 0 %}
+                            <strong>Cena (bez rabatu):</strong> <del>{{ akcesorium.cena }}</del><br>
+                            <strong>Rabat:</strong> -{{ akcesorium.rabat }}%
+                        {% endif %}
+                    </p>
+                    <h5 class="text-primary">{{ akcesorium.cena_po_rabacie }}</h5>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <span class="badge bg-success w-100 py-2 mb-2">Dostępne do zakupu</span>
+                    <a href="{% url 'wypozyczalnia:dodaj_do_koszyka' 'akcesoria' akcesorium.id %}" class="btn btn-outline-primary w-100">
+                        <i class="bi bi-cart-plus"></i> Dodaj do koszyka
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="alert alert-warning" role="alert">
+            Brak akcesoriów w bazie danych. Dodaj je w panelu administratora!
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock content %}
