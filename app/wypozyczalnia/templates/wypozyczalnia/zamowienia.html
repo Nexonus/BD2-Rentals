@@ -93,9 +93,9 @@
                             <!-- Zakupy -->
                             <div class="col-md-6">
                                 <h5 class="border-bottom border-secondary pb-2 mb-3">Kupiony sprzęt</h5>
-                                {% if transakcja.sprzedaże.all %}
+                                {% if transakcja.sprzedaze.all %}
                                     <ul class="list-group list-group-flush bg-transparent">
-                                    {% for zakup in transakcja.sprzedaże.all %}
+                                    {% for zakup in transakcja.sprzedaze.all %}
                                         <li class="list-group-item bg-transparent text-light border-secondary d-flex justify-content-between align-items-center">
                                             <div>
                                                 <div class="fw-bold">{{ zakup.akcesoria.nazwa }}</div>

@@ -39,7 +39,7 @@ class ZakupSprzetu(models.Model):
     transakcja = models.ForeignKey(
         'Transakcja', 
         on_delete=models.CASCADE,
-        related_name='sprzedaże'
+        related_name='sprzedaze'
     )
     akcesoria = models.ForeignKey(
         'Akcesoria',

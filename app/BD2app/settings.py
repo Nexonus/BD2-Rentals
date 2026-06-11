@@ -114,13 +114,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = "pl-pl"
-
-TIME_ZONE = "UTC"
-
+LANGUAGE_CODE = 'pl'
+TIME_ZONE = 'Europe/Warsaw'
 USE_I18N = True
-
-USE_TZ = True
+USE_TZ = True # Aktualizacja strefy czasowej na naszą :)
 
 
 # Static files (CSS, JavaScript, Images)

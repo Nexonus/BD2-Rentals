@@ -4,6 +4,10 @@ from djmoney.money import Money
 from datetime import date
 from decimal import Decimal, ROUND_UP
 
+from django.utils import timezone
+
+from django.core.exceptions import ValidationError
+
 class Wypozyczenie(models.Model):
     transakcja = models.ForeignKey(
         'Transakcja',
@@ -36,13 +40,14 @@ class Wypozyczenie(models.Model):
             return self.cena_za_godzine * Decimal('0.0')
         
         czas = self.termin_zwrotu - self.data_wypozyczenia
-        godziny = Decimal(czas.total_seconds() / 3600) # Zamieniamy na godziny aby obliczyć cenę wynajmu rowera.
+        godziny = Decimal(czas.total_seconds() / 3600).quantize(Decimal('0.01')) # Zamieniamy na godziny aby obliczyć cenę wynajmu rowera.
         return self.cena_za_godzine * godziny
-    
+    # Mała korekta zaokrąglenie do dwóch miejsc po przecinku ze względu na floating point.
+
     def oblicz_spoznienie(self): # Not Null Terminy 
         if self.termin_zwrotu and self.planowany_termin_zwrotu and self.termin_zwrotu > self.planowany_termin_zwrotu:
             roznica = self.termin_zwrotu - self.planowany_termin_zwrotu
-            return Decimal(roznica.total_seconds() / 3600)
+            return Decimal(roznica.total_seconds() / 3600).quantize(Decimal('0.01')) 
         return Decimal('0.00')
 
     def kara_za_spoznienie(self):
@@ -56,9 +61,23 @@ class Wypozyczenie(models.Model):
         total_amount = total.amount.quantize(Decimal('0.01'), rounding=ROUND_UP)
         return Money(total_amount, total.currency)
     
+    def zakoncz_wypozyczenie(self):
+        if not self.termin_zwrotu:
+            self.termin_zwrotu = timezone.now()
+            self.save()
+
+        self.rower.status(True) # Odblokowanie roweru
+        return self.koszt_calkowity()
+    
+    def clean(self):
+        if not self.pk and self.rower and not self.rower.dostepnosc:
+            raise ValidationError({'rower': "This bike is unavailable for rental."})
+
     def save(self, *args, **kwargs):
+        self.full_clean()
         if not self.pk: 
             self.cena_za_godzine = self.rower.cena_za_godzine
+            self.rower.status(False)
         super().save(*args, **kwargs)
     
     def __str__(self):
@@ -79,6 +98,10 @@ class Rower(models.Model):
     dostepnosc = models.BooleanField(default=True)
     
     cena_za_godzine = MoneyField(max_digits=10, decimal_places=2, default_currency='PLN')
+
+    def status(self, dostepnosc: bool): # Zmiana statusu roweru
+        self.dostepnosc = dostepnosc 
+        self.save(update_fields=['dostepnosc'])
 
     class Meta:
         verbose_name = "Rower"

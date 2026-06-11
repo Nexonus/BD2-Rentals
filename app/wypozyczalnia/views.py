@@ -9,6 +9,11 @@ from .models.osoby import Klient, Pracownik
 from django.utils import timezone
 from decimal import Decimal
 
+from django.db import transaction
+from django.db.models import ProtectedError
+from django.core.exceptions import ValidationError
+from django.db import IntegrityError
+
 def strona_glowna(request):
     lista_rowerow = Rower.objects.all()
     lista_akcesoriow = Akcesoria.objects.all()
@@ -114,39 +119,44 @@ def kasa(request):
         if not (sklep and pracownik and klient):
             messages.error(request, "Błąd systemu: Brak wymaganych danych w bazie (sklep/pracownik/klient).")
             return redirect('wypozyczalnia:koszyk')
-            
-        transakcja = Transakcja.objects.create(
-            sklep=sklep,
-            klient=klient,
-            pracownik=pracownik
-        )
-        
-        for pozycja in pozycje:
-            if pozycja.produkt is None:
-                continue
-                
-            if isinstance(pozycja.produkt, Rower):
-                rower = pozycja.produkt
-                rower.dostepnosc = False
-                rower.save()
-                
-                Wypozyczenie.objects.create(
-                    transakcja=transakcja,
-                    rower=rower
-                )
-            elif isinstance(pozycja.produkt, Akcesoria):
-                ZakupSprzetu.objects.create(
-                    transakcja=transakcja,
-                    akcesoria=pozycja.produkt,
-                    ilosc=pozycja.ilosc
+        try:
+            with transaction.atomic():
+                transakcja = Transakcja.objects.create(
+                    sklep=sklep,
+                    klient=klient,
+                    pracownik=pracownik
                 )
                 
-        pozycje.delete()
+                for pozycja in pozycje:
+                    if pozycja.produkt is None:
+                        continue
+                        
+                    if isinstance(pozycja.produkt, Rower):
+                        rower = pozycja.produkt
+                        #rower.dostepnosc = False   # Mała korekta, bo teraz model się tym zajmuje 
+                        #rower.save()
+                        
+                        Wypozyczenie.objects.create(
+                            transakcja=transakcja,
+                            rower=rower
+                        )
+                    elif isinstance(pozycja.produkt, Akcesoria):
+                        ZakupSprzetu.objects.create(
+                            transakcja=transakcja,
+                            akcesoria=pozycja.produkt,
+                            ilosc=pozycja.ilosc
+                        )
+                        
+                pozycje.delete()
+                
+                messages.success(request, "Dziękujemy! Twoja rezerwacja i zakupy zostały pomyślnie zapisane.")
+                return redirect('wypozyczalnia:strona_glowna')
+                
+            return redirect('wypozyczalnia:koszyk')
         
-        messages.success(request, "Dziękujemy! Twoja rezerwacja i zakupy zostały pomyślnie zapisane.")
-        return redirect('wypozyczalnia:strona_glowna')
-        
-    return redirect('wypozyczalnia:koszyk')
+        except ValidationError as e:
+            messages.error(request, f"Błąd: {e.message_dict}")
+            return redirect('wypozyczalnia:koszyk')
 
 @login_required
 def moje_zamowienia(request):
@@ -186,13 +196,14 @@ def zwroc_rower(request, wynajem_id):
         wynajem = get_object_or_404(Wypozyczenie, id=wynajem_id)
         
         # Oznacz jako zwrócony
-        wynajem.termin_zwrotu = timezone.now()
-        wynajem.save()
+        #wynajem.termin_zwrotu = timezone.now()
+        #wynajem.save()
         
         # Przywróć dostępność roweru
+        #rower.dostepnosc = True
+        #rower.save()
         rower = wynajem.rower
-        rower.dostepnosc = True
-        rower.save()
-        
+        wynajem.zakoncz_wypozyczenie() # Zrobiłem to jako funkcja w modelu jak by co! ^^
+
         messages.success(request, f"Rower {rower.marka} został pomyślnie zwrócony!")
     return redirect('wypozyczalnia:zamowienia')
