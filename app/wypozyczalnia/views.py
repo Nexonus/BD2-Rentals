@@ -15,11 +15,36 @@ from django.core.exceptions import ValidationError
 from django.db import IntegrityError
 
 def strona_glowna(request):
+    q = request.GET.get('q', '')
+    kategoria = request.GET.get('kategoria', 'wszystko')
+
     lista_rowerow = Rower.objects.all()
     lista_akcesoriow = Akcesoria.objects.all()
+
+    if q:
+        lista_rowerow = lista_rowerow.filter(marka__icontains=q)
+        lista_akcesoriow = lista_akcesoriow.filter(nazwa__icontains=q)
+
+    if kategoria == 'rowery':
+        lista_akcesoriow = lista_akcesoriow.none()
+    elif kategoria == 'akcesoria':
+        lista_rowerow = lista_rowerow.none()
+    elif kategoria.startswith('rower_'):
+        typ = kategoria.replace('rower_', '')
+        lista_rowerow = lista_rowerow.filter(typ_roweru=typ)
+        lista_akcesoriow = lista_akcesoriow.none()
+    elif kategoria.startswith('akc_'):
+        typ = kategoria.replace('akc_', '')
+        lista_akcesoriow = lista_akcesoriow.filter(kategoria=typ)
+        lista_rowerow = lista_rowerow.none()
+
     context = {
         'rowery': lista_rowerow,
-        'akcesoria': lista_akcesoriow
+        'akcesoria': lista_akcesoriow,
+        'q': q,
+        'kategoria': kategoria,
+        'kategorie_rowerow': Rower.MODEL_CHOICES,
+        'kategorie_akcesoriow': Akcesoria.KATEGORIE
     }
     return render(request, 'wypozyczalnia/index.html', context)
 
