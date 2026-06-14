@@ -13,4 +13,5 @@ urlpatterns = [
     path('zamowienia/', views.moje_zamowienia, name='zamowienia'),
     path('zamowienia/zwroc/<int:wynajem_id>/', views.zwroc_rower, name='zwroc_rower'),
     path('profil/', views.profil, name='profil'),
+    path('o-nas/', views.o_nas, name='o_nas'),
 ]

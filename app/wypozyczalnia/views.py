@@ -232,3 +232,13 @@ def zwroc_rower(request, wynajem_id):
 
         messages.success(request, f"Rower {rower.marka} został pomyślnie zwrócony!")
     return redirect('wypozyczalnia:zamowienia')
+
+def o_nas(request):
+    sklepy = Sklep.objects.all()
+    pracownicy = Pracownik.objects.all()
+    
+    context = {
+        'sklepy': sklepy,
+        'pracownicy': pracownicy,
+    }
+    return render(request, 'wypozyczalnia/o_nas.html', context)
