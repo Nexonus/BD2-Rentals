@@ -37,7 +37,6 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" href="#">Nasze Rowery</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'wypozyczalnia:o_nas' %}">O nas</a>
                         </li>
@@ -53,7 +52,13 @@
                             <li class="nav-item">
                                 <a href="{% url 'wypozyczalnia:zamowienia' %}" class="nav-link">
                                     <i class="bi bi-receipt"></i>
-                                    Moje zamówienia
+                                    Zamówienia
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'wypozyczalnia:reklamacje' %}" class="nav-link">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                    Reklamacje
                                 </a>
                             </li>
                             <li class="nav-item">

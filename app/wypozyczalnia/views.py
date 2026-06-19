@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
 from .models.wypozyczenia import Rower, Wypozyczenie
 from .models.sprzedaze import Akcesoria, ZakupSprzetu, Sklep
-from .models.operacje import Koszyk, PozycjaKoszyka, Transakcja
+from .models.operacje import Koszyk, PozycjaKoszyka, Transakcja, Reklamacja
 from .models.osoby import Klient, Pracownik
 from django.utils import timezone
 from decimal import Decimal
@@ -119,7 +119,7 @@ def koszyk_widok(request):
     }
     return render(request, 'wypozyczalnia/koszyk.html', context)
 
-from .forms import KlientForm
+from .forms import KlientForm, ReklamacjaForm
 
 @login_required
 def kasa(request):
@@ -232,6 +232,48 @@ def zwroc_rower(request, wynajem_id):
 
         messages.success(request, f"Rower {rower.marka} został pomyślnie zwrócony!")
     return redirect('wypozyczalnia:zamowienia')
+
+
+@login_required
+def moje_reklamacje(request):
+    if not hasattr(request.user, 'klient_profil'):
+        messages.warning(request, "Aby zobaczyć swoje reklamacje, uzupełnij najpierw swój profil.")
+        return redirect('wypozyczalnia:profil')
+        
+    klient = request.user.klient_profil
+    reklamacje = Reklamacja.objects.filter(transakcja__klient=klient).order_by('-data_zgloszenia')
+    
+    context = {
+        'reklamacje': reklamacje,
+    }
+    return render(request, 'wypozyczalnia/reklamacje.html', context)
+
+@login_required
+def dodaj_reklamacje(request, transakcja_id):
+    if not hasattr(request.user, 'klient_profil'):
+        messages.warning(request, "Aby zgłosić reklamację, uzupełnij najpierw swój profil.")
+        return redirect('wypozyczalnia:profil')
+        
+    klient = request.user.klient_profil
+    transakcja = get_object_or_404(Transakcja, id=transakcja_id, klient=klient)
+    
+    if request.method == 'POST':
+        form = ReklamacjaForm(request.POST)
+        if form.is_valid():
+            reklamacja = form.save(commit=False)
+            reklamacja.transakcja = transakcja
+            reklamacja.status = "1" # Nowa
+            reklamacja.save()
+            messages.success(request, f"Reklamacja dla transakcji TR-{transakcja.id:04d} została zgłoszona.")
+            return redirect('wypozyczalnia:reklamacje')
+    else:
+        form = ReklamacjaForm()
+        
+    context = {
+        'form': form,
+        'transakcja': transakcja,
+    }
+    return render(request, 'wypozyczalnia/dodaj_reklamacje.html', context)
 
 def o_nas(request):
     sklepy = Sklep.objects.all()

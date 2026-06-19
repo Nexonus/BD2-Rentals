@@ -79,6 +79,9 @@
                                                 <div class="text-end">
                                                     <span class="badge bg-secondary mb-1">Zwrócony: {{ wynajem.termin_zwrotu|date:"H:i" }}</span><br/>
                                                     <span class="text-info fw-bold small">Do zapłaty: {{ wynajem.koszt_calkowity.amount }} zł</span>
+                                                    {% if wynajem.kara_za_spoznienie.amount > 0 %}
+                                                        <br/><span class="text-danger small">W tym kara za spóźnienie: {{ wynajem.kara_za_spoznienie.amount }} zł</span>
+                                                    {% endif %}
                                                 </div>
                                                 {% endif %}
                                             </div>
@@ -109,6 +112,16 @@
                                     <p class="text-muted small">Brak zakupionych akcesoriów w tej transakcji.</p>
                                 {% endif %}
                             </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 border-top border-secondary pt-3 px-3">
+                        <div class="col-md-6 mb-2">
+                            <span class="text-muted small">Kaucja pobrana: {{ transakcja.kaucja_pobrana.amount }} zł</span><br/>
+                            <span class="text-muted small">Kaucja zwrócona: {{ transakcja.kaucja_zwrocona.amount }} zł</span>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <h5 class="mb-2">Razem utarg: <span class="text-success">{{ transakcja.utarg_calkowity.amount }} zł</span></h5>
+                            <a href="{% url 'wypozyczalnia:dodaj_reklamacje' transakcja.id %}" class="btn btn-outline-warning btn-sm mt-2"><i class="bi bi-exclamation-triangle me-1"></i>Zgłoś reklamację</a>
                         </div>
                     </div>
                 </div>
