@@ -2,7 +2,7 @@ from django.test import TestCase
 from wypozyczalnia.models.osoby import Klient, Pracownik
 from wypozyczalnia.models.sprzedaze import Sklep
 from wypozyczalnia.models.operacje import Transakcja, Reklamacja, Koszyk, PozycjaKoszyka
-from wypozyczalnia.models.sprzedaze import ZakupSprzetu, Akcesoria
+from wypozyczalnia.models.sprzedaze import ZakupSprzetu, Akcesoria, StanMagazynowyAkcesoriow
 from wypozyczalnia.models.wypozyczenia import Wypozyczenie, Rower
 from django.utils import timezone
 from datetime import timedelta
@@ -29,15 +29,16 @@ class DB_Tests(TestCase):
             pracownik=self.pracownik
         )
         self.assertEqual(Transakcja.objects.count(), 1)
-        self.assertEqual(str(t), "TR-0001")
+        self.assertEqual(str(t), f"TR-{t.id:04d}")
     
     def test_ZwrotKosztWynajmu(self):
         t = Transakcja.objects.create(sklep=self.sklep, klient=self.klient, pracownik=self.pracownik)
         
         akcesoria = Akcesoria.objects.create(nazwa="Kask", cena=50, rabat=0)
+        StanMagazynowyAkcesoriow.objects.create(sklep=self.sklep, akcesorium=akcesoria, ilosc=10) # Dodaj to!
         ZakupSprzetu.objects.create(transakcja=t, akcesoria=akcesoria, ilosc=1)
-        
-        rower = Rower.objects.create(marka="Rower Testowy", cena_za_godzine=30)
+            
+        rower = Rower.objects.create(marka="Rower Testowy", cena_za_godzine=30, sklep=self.sklep)
 
         czas_wypozyczenia = timezone.now()
         czas_zwrotu = czas_wypozyczenia + timedelta(hours=1) 
@@ -53,7 +54,7 @@ class DB_Tests(TestCase):
         self.assertEqual(t.utarg_calkowity.amount, 80) # Koszt wynajmu uwzględnia czasowy koszt + koszt zakupu akcesoriów.
     
     def test_KosztWynajmu(self):
-        rower = Rower.objects.create(marka="Rower Testowy", cena_za_godzine=30)
+        rower = Rower.objects.create(marka="Rower Testowy", cena_za_godzine=30, sklep=self.sklep)
         t = Transakcja.objects.create(sklep=self.sklep, klient=self.klient, pracownik=self.pracownik)
         wypozyczenie = Wypozyczenie.objects.create(transakcja=t, rower=rower, data_wypozyczenia=timezone.now())
     
@@ -93,7 +94,7 @@ class DB_Tests(TestCase):
             # Sprawdzamy, czy da się dwie takie same transakcje zrobić. Jak nie to mamy Assert IntegrityError.
 
     def test_WypozyczenieNiedostepnego(self):
-        rower = Rower.objects.create(marka="Rower Niedostepny", cena_za_godzine=30, dostepnosc=False)
+        rower = Rower.objects.create(marka="Rower Niedostepny", cena_za_godzine=30, dostepnosc=False, sklep=self.sklep)
         t = Transakcja.objects.create(sklep=self.sklep, klient=self.klient, pracownik=self.pracownik)
         
         wypozyczenie = Wypozyczenie(transakcja=t, rower=rower)
@@ -104,7 +105,8 @@ class DB_Tests(TestCase):
         rower = Rower.objects.create(
             nr_seryjny="SN-007", marka="Test", typ_roweru="MTB", 
             kolor="Czarny", kraj="Polska", cena_za_godzine=30, 
-            dostepnosc=True
+            dostepnosc=True,
+            sklep=self.sklep
         )
         t = Transakcja.objects.create(sklep=self.sklep, klient=self.klient, pracownik=self.pracownik)
         Wypozyczenie.objects.create(transakcja=t, rower=rower)
@@ -116,7 +118,8 @@ class DB_Tests(TestCase):
         rower = Rower.objects.create(
             nr_seryjny="SN-008", marka="Test", typ_roweru="MTB", 
             kolor="Biały", kraj="Polska", cena_za_godzine=30, 
-            dostepnosc=True
+            dostepnosc=True,
+            sklep=self.sklep
         )
         t = Transakcja.objects.create(sklep=self.sklep, klient=self.klient, pracownik=self.pracownik)
         wypozyczenie = Wypozyczenie.objects.create(transakcja=t, rower=rower)
@@ -133,7 +136,8 @@ class DB_Tests(TestCase):
         rower = Rower.objects.create(
             nr_seryjny="SN-009", marka="Test", typ_roweru="MTB", 
             kolor="Biały", kraj="Polska", cena_za_godzine=30, 
-            dostepnosc=True
+            dostepnosc=True,
+            sklep=self.sklep
         )
         t = Transakcja.objects.create(sklep=self.sklep, klient=self.klient, pracownik=self.pracownik)
         wypozyczenie = Wypozyczenie.objects.create(transakcja=t, rower=rower)

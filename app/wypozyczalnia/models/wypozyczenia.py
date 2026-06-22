@@ -35,9 +35,13 @@ class Wypozyczenie(models.Model):
         verbose_name = "Wypożyczenie"
         verbose_name_plural = "Wypożyczenia"
 
-    def koszt_wynajmu(self):
+    def koszt_wynajmu(self):    # to poprawione po unit testach.
         if not self.termin_zwrotu:
-            return self.cena_za_godzine 
+            return Money(0, 'PLN')
+        
+    # def koszt_wynajmu(self):
+    #     if not self.termin_zwrotu:
+    #         return self.cena_za_godzine 
         
         czas = self.termin_zwrotu - self.data_wypozyczenia
         godziny = Decimal(czas.total_seconds() / 3600.0) # Zamieniamy na godziny aby obliczyć cenę wynajmu rowera.
