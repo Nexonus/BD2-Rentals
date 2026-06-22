@@ -19,7 +19,7 @@ def strona_glowna(request):
     q = request.GET.get('q', '')
     kategoria = request.GET.get('kategoria', 'wszystko')
 
-    lista_rowerow = Rower.objects.all()
+    lista_rowerow = Rower.objects.filter(dostepnosc=True).exclude(serwisy__isnull=False)
     #lista_akcesoriow = Akcesoria.objects.all()
 
     # Stan magazynowy akcesoriów:
