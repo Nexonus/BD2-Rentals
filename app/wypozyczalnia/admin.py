@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models.osoby import Pracownik, Klient
 from .models.operacje import Transakcja, Reklamacja
-from .models.sprzedaze import Sklep, Akcesoria, ZakupSprzetu
+from .models.sprzedaze import Sklep, Akcesoria, ZakupSprzetu, StanMagazynowyAkcesoriow
 from .models.wypozyczenia import Wypozyczenie, Rower, SerwisRoweru
 # Zmiana podziału na pliki, aby łatwiej zaimportować je do projektu.
 
@@ -79,18 +79,57 @@ class PracownikAdmin(admin.ModelAdmin):
     # Easily filter to see only Mechanics or only Cashiers
     list_filter = ('stanowisko',)
 
+# @admin.register(Akcesoria)
+# class AkcesoriaAdmin(admin.ModelAdmin):
+#     list_display = ('nazwa', 'kategoria', 'cena', 'rabat', 'kolor')
+#     search_fields = ('nazwa', 'kategoria')
+#     list_filter = ('kategoria', 'kolor')
+#     # Allows the admin to quickly change the discount (rabat) without opening the item
+#     list_editable = ('rabat',)
+
+class StanMagazynowyInline(admin.TabularInline):
+    model = StanMagazynowyAkcesoriow
+    extra = 1
+
 @admin.register(Akcesoria)
 class AkcesoriaAdmin(admin.ModelAdmin):
-    list_display = ('nazwa', 'kategoria', 'cena', 'rabat', 'kolor')
-    search_fields = ('nazwa', 'kategoria')
-    list_filter = ('kategoria', 'kolor')
-    # Allows the admin to quickly change the discount (rabat) without opening the item
-    list_editable = ('rabat',)
+    list_display = ('nazwa', 'kategoria', 'cena_display', 'total_stock')
+    inlines = [StanMagazynowyInline]
+
+    @admin.display(description="Cena")
+    def cena_display(self, obj):
+        return f"{obj.cena.amount} {obj.cena.currency}"
+
+    @admin.display(description="Stan całkowity")
+    def total_stock(self, obj):
+        from django.db.models import Sum
+        total = obj.stany_magazynowe.aggregate(Sum('ilosc'))['ilosc__sum']
+        return total or 0
+    
+class WypozyczenieInline(admin.TabularInline):
+    model = Wypozyczenie
+    extra = 1
+
+class ZakupSprzetuInline(admin.TabularInline):
+    model = ZakupSprzetu
+    extra = 1
+
+@admin.register(Transakcja)
+class TransakcjaAdmin(admin.ModelAdmin):
+    list_display = ('id', 'data_transakcji', 'sklep', 'utarg_calkowity_zbuforowany')
+    list_filter = ('sklep', 'data_transakcji')
+    inlines = [WypozyczenieInline, ZakupSprzetuInline]
 
 @admin.register(Sklep)
 class SklepAdmin(admin.ModelAdmin):
     list_display = ('id', 'miasto', 'adres', 'kod_pocztowy')
     search_fields = ('miasto', 'adres')
 
-admin.site.register(Transakcja)
+#admin.site.register(Transakcja) # Dodajemy wartości zbuforowane dla procedur składowych.
+class TransakcjaAdmin(admin.ModelAdmin):
+    list_display = ('id', 'klient', 'pracownik', 'data_wypozyczenia', 'wyswietl_utarg_bufor')
+    readonly_fields = ('utarg_calkowity_zbuforowany',)
+    list_filter = ('data_wypozyczenia',)
+    search_fields = ('') 
+
 admin.site.register(Reklamacja)

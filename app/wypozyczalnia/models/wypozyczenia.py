@@ -37,11 +37,18 @@ class Wypozyczenie(models.Model):
 
     def koszt_wynajmu(self):
         if not self.termin_zwrotu:
-            return self.cena_za_godzine * Decimal('0.0')
+            return self.cena_za_godzine 
         
         czas = self.termin_zwrotu - self.data_wypozyczenia
-        godziny = Decimal(czas.total_seconds() / 3600).quantize(Decimal('0.01')) # Zamieniamy na godziny aby obliczyć cenę wynajmu rowera.
-        return self.cena_za_godzine * godziny
+        godziny = Decimal(czas.total_seconds() / 3600.0) # Zamieniamy na godziny aby obliczyć cenę wynajmu rowera.
+        
+        if godziny < Decimal('1.00'):
+            godziny = Decimal('1.00') # Zaokrąglamy czas wypożyczenia do góry.
+        
+        kwota_bazowa = self.cena_za_godzine.amount
+        wynik_decimal = (kwota_bazowa * godziny).quantize(Decimal('0.01'), rounding=ROUND_UP)
+
+        return Money(wynik_decimal, self.cena_za_godzine.currency)
     # Mała korekta zaokrąglenie do dwóch miejsc po przecinku ze względu na floating point.
 
     def oblicz_spoznienie(self): # Not Null Terminy 
@@ -76,7 +83,7 @@ class Wypozyczenie(models.Model):
     def save(self, *args, **kwargs):
         self.full_clean()
         if not self.pk: 
-            self.cena_za_godzine = self.rower.cena_za_godzine
+            self.cena_za_godzine = self.rower.cena_za_godzine   # Denormalizacja - kopiujemy wartość z roweru do wypożyczenia, czyli wprowadzamy redundancję.
             self.rower.status(False)
         super().save(*args, **kwargs)
     
@@ -93,9 +100,18 @@ class Rower(models.Model):
     nr_seryjny = models.CharField(max_length=50, unique=True)
     typ_roweru = models.CharField(max_length=4, choices=MODEL_CHOICES)
     marka = models.CharField(max_length=50)
-    kolor = models.CharField(max_length=30)
+    kolor = models.CharField(max_length=30, null=True, blank=True)
     kraj = models.CharField(max_length=100)
     dostepnosc = models.BooleanField(default=True)
+
+    sklep = models.ForeignKey(
+        'Sklep',
+        on_delete=models.PROTECT, # Nie możemy usunąć sklepu, jeśli nie usunięto jego towarów.
+        null=False,
+        blank=False,
+        related_name='rowery',
+        verbose_name="Sklep" # Gdzie wypożyczamy rower?
+    )
     
     cena_za_godzine = MoneyField(max_digits=10, decimal_places=2, default_currency='PLN')
 

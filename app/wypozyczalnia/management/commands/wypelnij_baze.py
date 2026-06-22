@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from wypozyczalnia.models.osoby import Klient, Pracownik
-from wypozyczalnia.models.sprzedaze import Sklep, Akcesoria, ZakupSprzetu
+from wypozyczalnia.models.sprzedaze import Sklep, Akcesoria, ZakupSprzetu, StanMagazynowyAkcesoriow
 from wypozyczalnia.models.wypozyczenia import Rower, Wypozyczenie
 from wypozyczalnia.models.operacje import Transakcja, Koszyk, PozycjaKoszyka
 from datetime import date, timedelta
@@ -17,12 +17,13 @@ class Command(BaseCommand):
         Koszyk.objects.all().delete()
         Wypozyczenie.objects.all().delete()
         ZakupSprzetu.objects.all().delete()
+        StanMagazynowyAkcesoriow.objects.all().delete()
         Transakcja.objects.all().delete()
         Klient.objects.all().delete()
         Pracownik.objects.all().delete()
+        Rower.objects.all().delete()
         Sklep.objects.all().delete()
         Akcesoria.objects.all().delete()
-        Rower.objects.all().delete()
 
         self.stdout.write("Dodawanie sklepów...")
         sklep1 = Sklep.objects.create(miasto='Waw', adres='ul. Prosta 12', kod_pocztowy='00-012')
@@ -43,12 +44,17 @@ class Command(BaseCommand):
         zapiecie = Akcesoria.objects.create(nazwa='Zapięcie U-Lock', kategoria='B2', cena=Decimal('85.50'))
         lampki = Akcesoria.objects.create(nazwa='Zestaw lampek LED', kategoria='A1', cena=Decimal('45.00'))
 
+        self.stdout.write("Dodawanie stanów magazynowych...")
+        for akcesorium in [kask1, kask2, zapiecie, lampki]:
+            StanMagazynowyAkcesoriow.objects.create(sklep=sklep1, akcesorium=akcesorium, ilosc=20)
+            StanMagazynowyAkcesoriow.objects.create(sklep=sklep2, akcesorium=akcesorium, ilosc=20)
+
         self.stdout.write("Dodawanie rowerów...")
-        rower1 = Rower.objects.create(nr_seryjny='R-MTB-001', typ_roweru='MTB', marka='Trek', kolor='Czarny', kraj='USA', dostepnosc=True, cena_za_godzine=Decimal('15.00'))
-        rower2 = Rower.objects.create(nr_seryjny='R-CITY-001', typ_roweru='CITY', marka='Romet', kolor='Niebieski', kraj='Polska', dostepnosc=True, cena_za_godzine=Decimal('12.00'))
-        rower3 = Rower.objects.create(nr_seryjny='R-ROAD-001', typ_roweru='ROAD', marka='Giant', kolor='Czerwony', kraj='Tajwan', dostepnosc=True, cena_za_godzine=Decimal('20.00'))
-        rower4 = Rower.objects.create(nr_seryjny='R-MTB-002', typ_roweru='MTB', marka='Merida', kolor='Zielony', kraj='Tajwan', dostepnosc=True, cena_za_godzine=Decimal('18.00'))
-        rower5 = Rower.objects.create(nr_seryjny='R-CITY-002', typ_roweru='CITY', marka='Kross', kolor='Biały', kraj='Polska', dostepnosc=True, cena_za_godzine=Decimal('10.00'))
+        rower1 = Rower.objects.create(nr_seryjny='R-MTB-001', typ_roweru='MTB', marka='Trek', kolor='Czarny', kraj='USA', dostepnosc=True, cena_za_godzine=Decimal('15.00'), sklep=sklep1)
+        rower2 = Rower.objects.create(nr_seryjny='R-CITY-001', typ_roweru='CITY', marka='Romet', kolor='Niebieski', kraj='Polska', dostepnosc=True, cena_za_godzine=Decimal('12.00'), sklep=sklep1)
+        rower3 = Rower.objects.create(nr_seryjny='R-ROAD-001', typ_roweru='ROAD', marka='Giant', kolor='Czerwony', kraj='Tajwan', dostepnosc=True, cena_za_godzine=Decimal('20.00'), sklep=sklep2)
+        rower4 = Rower.objects.create(nr_seryjny='R-MTB-002', typ_roweru='MTB', marka='Merida', kolor='Zielony', kraj='Tajwan', dostepnosc=True, cena_za_godzine=Decimal('18.00'), sklep=sklep2)
+        rower5 = Rower.objects.create(nr_seryjny='R-CITY-002', typ_roweru='CITY', marka='Kross', kolor='Biały', kraj='Polska', dostepnosc=True, cena_za_godzine=Decimal('10.00'), sklep=sklep2)
 
         self.stdout.write("Dodawanie przykładowych transakcji...")
         # Transakcja 1: Wypożyczenie MTB + kask

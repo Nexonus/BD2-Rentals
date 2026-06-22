@@ -5,7 +5,7 @@ from django.core.management.base import BaseCommand
 from django.utils import timezone
 from wypozyczalnia.models.operacje import Transakcja
 from wypozyczalnia.models.osoby import Klient, Pracownik
-from wypozyczalnia.models.sprzedaze import Akcesoria, Sklep, ZakupSprzetu
+from wypozyczalnia.models.sprzedaze import Akcesoria, Sklep, ZakupSprzetu, StanMagazynowyAkcesoriow
 from wypozyczalnia.models.wypozyczenia import Rower, Wypozyczenie
 
 
@@ -17,11 +17,12 @@ class Command(BaseCommand):
         Wypozyczenie.objects.all().delete()
         ZakupSprzetu.objects.all().delete()
         Transakcja.objects.all().delete()
+        Rower.objects.all().delete()     
+        StanMagazynowyAkcesoriow.objects.all().delete()
+        Akcesoria.objects.all().delete() 
         Klient.objects.all().delete()
         Pracownik.objects.all().delete()
         Sklep.objects.all().delete()
-        Akcesoria.objects.all().delete()
-        Rower.objects.all().delete()
 
         self.stdout.write("Dodawanie sklepów...")
         sklep1 = Sklep.objects.create(
@@ -84,10 +85,18 @@ class Command(BaseCommand):
             nazwa="Zestaw lampek LED", kategoria="A1", cena=Decimal("45.00")
         )
 
+        self.stdout.write("Dodawanie stanów magazynowych...")
+        produkty = [kask1, kask2, zapiecie, lampki]
+        
+        for p in produkty:
+            StanMagazynowyAkcesoriow.objects.create(sklep=sklep1, akcesorium=p, ilosc=10)
+            StanMagazynowyAkcesoriow.objects.create(sklep=sklep2, akcesorium=p, ilosc=10)
+
         self.stdout.write("Dodawanie rowerów...")
         rower1 = Rower.objects.create(
             nr_seryjny="R-MTB-001",
             typ_roweru="MTB",
+            sklep=sklep1,
             marka="Trek",
             kolor="Czarny",
             kraj="USA",
@@ -98,6 +107,7 @@ class Command(BaseCommand):
             nr_seryjny="R-CITY-001",
             typ_roweru="CITY",
             marka="Romet",
+            sklep=sklep1,
             kolor="Niebieski",
             kraj="Polska",
             dostepnosc=True,
@@ -107,6 +117,7 @@ class Command(BaseCommand):
             nr_seryjny="R-ROAD-001",
             typ_roweru="ROAD",
             marka="Giant",
+            sklep=sklep1,
             kolor="Czerwony",
             kraj="Tajwan",
             dostepnosc=True,
