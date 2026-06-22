@@ -1,6 +1,13 @@
 **/*.localz
 **/*.local
-**/*.git
 **/*.DS_Store
 *.pyc
 *.sqlite3
+.idea/
+.env
+.DS_Store
+/media/
+/staticfiles/
+**/*.git
+app/.env.example
+app/.env.example

@@ -1,0 +1,37 @@
+{% extends "wypozyczalnia/base.html" %} 
+
+{% block content %}
+<div class="container py-5">
+    <div class="glass-card bg-dark p-4 rounded text-light border border-secondary">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="section-title mb-0">Moje Reklamacje</h2>
+            <a href="{% url 'wypozyczalnia:zamowienia' %}" class="btn btn-outline-light">Wróć do zamówień</a>
+        </div>
+
+        {% if reklamacje %}
+            <div class="list-group">
+                {% for reklamacja in reklamacje %}
+                <div class="list-group-item bg-dark text-light border-secondary mb-3 rounded">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><i class="bi bi-exclamation-triangle me-2 text-warning"></i>Reklamacja RE-{{ reklamacja.id|stringformat:"04d" }}</h5>
+                        <small class="text-muted">{{ reklamacja.data_zgloszenia|date:"d M Y" }}</small>
+                    </div>
+                    <p class="mb-1"><strong>Transakcja:</strong> TR-{{ reklamacja.transakcja.id|stringformat:"04d" }}</p>
+                    <p class="mb-1"><strong>Status:</strong> <span class="badge bg-info text-dark">{{ reklamacja.get_status_display }}</span></p>
+                    {% if reklamacja.decyzja %}
+                        <p class="mb-1"><strong>Decyzja:</strong> <span class="badge {% if reklamacja.decyzja == 'P' %}bg-success{% elif reklamacja.decyzja == 'N' %}bg-danger{% else %}bg-secondary{% endif %}">{{ reklamacja.get_decyzja_display }}</span></p>
+                    {% endif %}
+                    <hr class="border-secondary">
+                    <p class="mb-0"><strong>Opis usterki:</strong><br/>{{ reklamacja.opis_problemu }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="text-center py-5 text-muted">
+                <i class="bi bi-emoji-smile display-1 mb-3"></i>
+                <h4>Nie masz jeszcze żadnych reklamacji.</h4>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

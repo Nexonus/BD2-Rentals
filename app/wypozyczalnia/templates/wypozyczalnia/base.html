@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pl" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}Wypożyczalnia rowerów{% endblock %}</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+        />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'wypozyczalnia:strona_glowna' %}">Wypożyczalnia BD2</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                >
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nasze Rowery</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'wypozyczalnia:o_nas' %}">O nas</a>
+                        </li>
+                    </ul>
+                    <ul class="d-flex navbar-nav mb-2 mb-lg-0">
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a href="{% url 'wypozyczalnia:profil' %}" class="nav-link">
+                                    <i class="bi bi-person-badge"></i>
+                                    Mój profil
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'wypozyczalnia:zamowienia' %}" class="nav-link">
+                                    <i class="bi bi-receipt"></i>
+                                    Zamówienia
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'wypozyczalnia:reklamacje' %}" class="nav-link">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                    Reklamacje
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <form action="{% url 'users:logout' %}" method="post" class="m-0 p-0">
+                                    {% csrf_token %}
+                                    <button type="submit" class="nav-link border-0 bg-transparent">
+                                        <i class="bi bi-person-x"></i>
+                                        Wyloguj się
+                                    </button>
+                                </form>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a href="{% url 'users:login' %}" class="nav-link">
+                                    <i class="bi bi-person"></i>
+                                    Zaloguj się
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        <li class="nav-item">
+                            <a href="{% url 'wypozyczalnia:koszyk' %}" class="nav-link">
+                                <i class="bi bi-basket"></i>
+                                Koszyk
+                                {% if cart_items_count > 0 %}
+                                <span class="badge rounded-pill bg-primary ms-1">{{ cart_items_count }}</span>
+                                {% endif %}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-3">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        {% block content %} {% endblock content %}
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

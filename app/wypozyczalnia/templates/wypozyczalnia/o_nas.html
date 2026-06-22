@@ -1,0 +1,46 @@
+{% extends "wypozyczalnia/base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="glass-card bg-dark p-4 rounded text-light border border-secondary mb-4">
+        <h2 class="section-title mb-4">Nasze Sklepy</h2>
+        <div class="row">
+            {% for sklep in sklepy %}
+                <div class="col-md-6 mb-3">
+                    <div class="card bg-transparent border-secondary text-light h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-shop text-primary me-2"></i>Wypożyczalnia {{ sklep.get_miasto_display }}</h5>
+                            <p class="card-text mb-1"><i class="bi bi-geo-alt me-2"></i>{{ sklep.adres }}</p>
+                            <p class="card-text mb-0"><i class="bi bi-mailbox me-2"></i>{{ sklep.kod_pocztowy }} {{ sklep.get_miasto_display }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12 text-muted">Brak zarejestrowanych sklepów.</div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="glass-card bg-dark p-4 rounded text-light border border-secondary">
+        <h2 class="section-title mb-4">Nasz Zespół</h2>
+        <div class="row">
+            {% for pracownik in pracownicy %}
+                <div class="col-md-4 col-sm-6 mb-3">
+                    <div class="card bg-transparent border-secondary text-light text-center h-100">
+                        <div class="card-body d-flex flex-column justify-content-center">
+                            <h1 class="display-4 text-secondary mb-3"><i class="bi bi-person-circle"></i></h1>
+                            <h5 class="card-title">{{ pracownik.get_full_name }}</h5>
+                            <p class="card-text text-info mb-1">{{ pracownik.get_stanowisko_display }}</p>
+                            {% if pracownik.telefon %}
+                                <p class="card-text small text-muted"><i class="bi bi-telephone me-1"></i>{{ pracownik.telefon }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12 text-muted">Brak przypisanych pracowników.</div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

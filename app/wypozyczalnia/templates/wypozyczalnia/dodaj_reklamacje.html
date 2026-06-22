@@ -1,0 +1,36 @@
+{% extends "wypozyczalnia/base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="glass-card bg-dark p-4 rounded text-light border border-secondary">
+                <h2 class="mb-4">Zgłoś reklamację dla transakcji TR-{{ transakcja.id|stringformat:"04d" }}</h2>
+                <p class="text-muted mb-4">Data transakcji: {{ transakcja.data_transakcji|date:"d M Y, H:i" }}</p>
+                
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                            {{ field }}
+                            {% if field.help_text %}
+                                <div class="form-text text-muted">{{ field.help_text }}</div>
+                            {% endif %}
+                            {% for error in field.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                    
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="{% url 'wypozyczalnia:zamowienia' %}" class="btn btn-outline-secondary">Anuluj i wróć</a>
+                        <button type="submit" class="btn btn-warning">Zgłoś usterkę</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

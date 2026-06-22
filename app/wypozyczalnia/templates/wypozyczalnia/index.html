@@ -1,0 +1,123 @@
+{% extends 'wypozyczalnia/base.html' %} 
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card mb-5 shadow-sm">
+        <div class="card-body">
+            <form method="GET" action="{% url 'wypozyczalnia:strona_glowna' %}" class="row g-3 align-items-center">
+                <div class="col-md-5">
+                    <input type="text" name="q" class="form-control" placeholder="Szukaj po nazwie lub marce..." value="{{ q }}">
+                </div>
+                <div class="col-md-5">
+                    <select name="kategoria" class="form-select">
+                        <option value="wszystko" {% if kategoria == 'wszystko' %}selected{% endif %}>Wszystko</option>
+                        <option value="rowery" {% if kategoria == 'rowery' %}selected{% endif %}>Wszystkie Rowery</option>
+                        <option value="akcesoria" {% if kategoria == 'akcesoria' %}selected{% endif %}>Wszystkie Akcesoria</option>
+                        <optgroup label="Typy Rowerów">
+                            {% for kod, nazwa in kategorie_rowerow %}
+                                <option value="rower_{{ kod }}" {% if kategoria == 'rower_'|add:kod %}selected{% endif %}>{{ nazwa }}</option>
+                            {% endfor %}
+                        </optgroup>
+                        <optgroup label="Typy Akcesoriów">
+                            {% for kod, nazwa in kategorie_akcesoriow %}
+                                <option value="akc_{{ kod }}" {% if kategoria == 'akc_'|add:kod %}selected{% endif %}>{{ nazwa }}</option>
+                            {% endfor %}
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="bi bi-search"></i> Szukaj
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {% if kategoria == 'wszystko' or kategoria == 'rowery' or 'rower_' in kategoria %}
+    <h1 class="mb-4">Dostępne Rowery</h1>
+    
+    <div class="row">
+        {% for rower in rowery %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ rower.marka }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ rower.get_typ_roweru_display }}</h6>
+                    <hr>
+                    <p class="card-text">
+                        <strong>Kolor:</strong> {{ rower.kolor }}<br>
+                        <strong>Kraj:</strong> {{ rower.kraj }}<br>
+                        <strong>Numer Seryjny:</strong> {{ rower.nr_seryjny }}
+                    </p>
+                    <h5 class="text-primary">{{ rower.cena_za_godzine }} / h</h5>
+                </div>
+                <div class="card-footer bg-transparent">
+                    {% if rower.dostepnosc %}
+                        <span class="badge bg-success w-100 py-2 mb-2">Dostępny do wypożyczenia</span>
+                        <a href="{% url 'wypozyczalnia:dodaj_do_koszyka' 'rower' rower.id %}" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-cart-plus"></i> Dodaj do koszyka
+                        </a>
+                    {% else %}
+                        <span class="badge bg-danger w-100 py-2 mb-2">Aktualnie w trasie</span>
+                        <button class="btn btn-outline-secondary w-100" disabled>
+                            Niedostępny
+                        </button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="alert alert-info w-100" role="alert">
+            Brak rowerów spełniających podane kryteria.
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if kategoria == 'wszystko' or kategoria == 'akcesoria' or 'akc_' in kategoria %}
+    <h1 class="mb-4 mt-5">Dostępne Akcesoria</h1>
+    
+    <div class="row">
+        {% for akcesorium in akcesoria %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ akcesorium.nazwa }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ akcesorium.get_kategoria_display }}</h6>
+                    <hr>
+                    <p class="card-text">
+                        <strong>Kolor:</strong> {% if akcesorium.kolor %}{{ akcesorium.kolor }}{% else %}Brak{% endif %}<br>
+                        {% if akcesorium.rabat and akcesorium.rabat > 0 %}
+                            <strong>Cena (bez rabatu):</strong> <del>{{ akcesorium.cena }}</del><br>
+                            <strong>Rabat:</strong> -{{ akcesorium.rabat }}%
+                        {% endif %}
+                    </p>
+                    <h5 class="text-primary">{{ akcesorium.cena_po_rabacie }}</h5>
+                </div>
+                <div class="card-footer bg-transparent">
+                    {% if akcesorium.suma_wszystkich and akcesorium.suma_wszystkich > 0 %}
+                        <span class="badge bg-success w-100 py-2 mb-2">
+                            Dostępne: {{ akcesorium.suma_wszystkich }} szt.
+                        </span>
+                        <a href="{% url 'wypozyczalnia:dodaj_do_koszyka' 'akcesoria' akcesorium.id %}" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-cart-plus"></i> Dodaj do koszyka
+                        </a>
+                    {% else %}
+                        <span class="badge bg-danger w-100 py-2 mb-2">Brak w magazynie</span>
+                        <button class="btn btn-outline-secondary w-100" disabled>
+                            Niedostępne
+                        </button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="alert alert-info w-100" role="alert">
+            Brak akcesoriów spełniających podane kryteria.
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}
