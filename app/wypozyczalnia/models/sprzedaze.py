@@ -84,6 +84,9 @@ class ZakupSprzetu(models.Model):
         self.cena_sprzedazy = self.akcesoria.cena_po_rabacie() * self.ilosc
         super().save(*args, **kwargs)
     
+    def utarg(self):
+        return self.cena_sprzedazy
+
     def __str__(self):
         return f"SP-{self.id:04d}"
     
