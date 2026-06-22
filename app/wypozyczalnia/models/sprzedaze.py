@@ -3,6 +3,8 @@ from django.core.validators import RegexValidator
 from decimal import Decimal 
 from djmoney.models.fields import MoneyField
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.db import transaction
+from django.core.exceptions import ValidationError
 
 class Sklep(models.Model):
     # Zakładamy odgórnie, że nazwa sklepu jest znana - to jedna sieć.
@@ -59,12 +61,28 @@ class ZakupSprzetu(models.Model):
         verbose_name = "Sprzedaż"
         verbose_name_plural = "Sprzedaże"
 
+    # def save(self, *args, **kwargs):
+    #     self.cena_sprzedazy = self.akcesoria.cena_po_rabacie() * self.ilosc
+    #     super().save(*args, **kwargs)
     def save(self, *args, **kwargs):
+        if not self.pk:
+            with transaction.atomic():
+                try:
+                    stan = StanMagazynowyAkcesoriow.objects.select_for_update().get(
+                        sklep=self.transakcja.sklep,
+                        akcesorium=self.akcesoria
+                    )
+                except StanMagazynowyAkcesoriow.DoesNotExist:
+                    raise ValidationError(f"Produkt {self.akcesoria.nazwa} nie jest dostępny w sklepie {self.transakcja.sklep}.")
+
+                if stan.ilosc < self.ilosc:
+                    raise ValidationError(f"Brak wystarczającej ilości towaru. Dostępne: {stan.ilosc}")
+                
+                stan.ilosc -= self.ilosc
+                stan.save()
+
         self.cena_sprzedazy = self.akcesoria.cena_po_rabacie() * self.ilosc
         super().save(*args, **kwargs)
-
-    def utarg(self): # Ilosc sprzedanych rzeczy x po jakiej cenie.
-        return self.cena_sprzedazy
     
     def __str__(self):
         return f"SP-{self.id:04d}"
@@ -127,3 +145,15 @@ class Akcesoria(models.Model):
     def __str__(self):
         return f"{self.nazwa} ({self.get_kategoria_display()})" # Zwracamy podgląd dla kategorii a nie jego kodu. Metoda generowana przez Django.
 
+class StanMagazynowyAkcesoriow(models.Model):
+    sklep = models.ForeignKey('Sklep', on_delete=models.CASCADE, related_name='stany_magazynowe')
+    akcesorium = models.ForeignKey('Akcesoria', on_delete=models.CASCADE, related_name='stany_magazynowe')
+    ilosc = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        unique_together = ('sklep', 'akcesorium') 
+        verbose_name = "Stan magazynowy"
+        verbose_name_plural = "Stany magazynowe"
+
+    def __str__(self):
+        return f"{self.akcesorium.nazwa} - {self.sklep.miasto}: {self.ilosc} szt."

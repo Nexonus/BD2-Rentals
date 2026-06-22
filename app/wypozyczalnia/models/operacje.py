@@ -48,10 +48,31 @@ class Transakcja(models.Model):
         return suma_akcesoria
     @property
     def utarg_wynajmy(self):
-        return sum(w.koszt_wynajmu() for w in self.wynajmy.all())
+        suma = 0
+        for w in self.wynajmy.all():
+            if w.termin_zwrotu:
+                suma += w.koszt_wynajmu()
+            else:
+                suma += w.cena_za_godzine
+        return suma
+        #return sum(w.koszt_wynajmu() for w in self.wynajmy.all())
     @property
     def utarg_calkowity(self):
+        if self.utarg_calkowity_zbuforowany and self.utarg_calkowity_zbuforowany.amount > 0:
+            return self.utarg_calkowity_zbuforowany
+        
+        # Jeśli bufor jest pusty, dynamicznie łączymy akcesoria i wynajmy - to opcja awaryjna dla Triggera.
         return self.utarg_sprzedaze + self.utarg_wynajmy
+    
+        #return self.utarg_sprzedaze + self.utarg_wynajmy # Stara wersja.
+    
+    utarg_calkowity_zbuforowany = MoneyField( # Obliczanie na bazie Triggera.
+        max_digits=12,
+        decimal_places=2,
+        default_currency='PLN',
+        default=0,
+        editable=False
+    )
 
 class Reklamacja(models.Model):
     transakcja = models.ForeignKey(

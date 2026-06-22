@@ -67,7 +67,7 @@
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
                                                     <div class="fw-bold">{{ wynajem.rower.marka }} {{ wynajem.rower.get_typ_roweru_display }}</div>
-                                                    <div class="small text-muted">Nr: {{ wynajem.rower.nr_seryjny }} | Zarezerwowany do: {{ wynajem.planowany_termin_zwrotu|date:"H:i" }}</div>
+                                                    <div class="small text-muted">Nr: {{ wynajem.rower.nr_seryjny }} | Zarezerwowany od: {{ wynajem.data_wypozyczenia|date:"H:i" }}</div>
                                                     <div class="text-success mt-1 fw-bold">{{ wynajem.cena_za_godzine.amount }} zł / godz.</div>
                                                 </div>
                                                 {% if not wynajem.termin_zwrotu %}
@@ -104,7 +104,7 @@
                                                 <div class="fw-bold">{{ zakup.akcesoria.nazwa }}</div>
                                                 <div class="small text-muted">{{ zakup.ilosc }} szt.</div>
                                             </div>
-                                            <div class="text-success fw-bold">{{ zakup.utarg.amount }} zł</div>
+                                            <div class="text-success fw-bold">{{ zakup.cena_sprzedazy.amount|floatformat:2|default:"0.00" }} zł</div>
                                         </li>
                                     {% endfor %}
                                     </ul>
@@ -120,7 +120,7 @@
                             <span class="text-muted small">Kaucja zwrócona: {{ transakcja.kaucja_zwrocona.amount }} zł</span>
                         </div>
                         <div class="col-md-6 text-md-end">
-                            <h5 class="mb-2">Razem utarg: <span class="text-success">{{ transakcja.utarg_calkowity.amount }} zł</span></h5>
+                            <h5 class="mb-2">Koszt całkowity: <span class="text-success">{{ transakcja.utarg_calkowity.amount }} zł</span></h5>
                             <a href="{% url 'wypozyczalnia:dodaj_reklamacje' transakcja.id %}" class="btn btn-outline-warning btn-sm mt-2"><i class="bi bi-exclamation-triangle me-1"></i>Zgłoś reklamację</a>
                         </div>
                     </div>

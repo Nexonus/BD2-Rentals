@@ -13,13 +13,23 @@ from django.db import transaction
 from django.db.models import ProtectedError
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError
+from django.db.models import Sum
 
 def strona_glowna(request):
     q = request.GET.get('q', '')
     kategoria = request.GET.get('kategoria', 'wszystko')
 
-    lista_rowerow = Rower.objects.all()
-    lista_akcesoriow = Akcesoria.objects.all()
+    lista_rowerow = Rower.objects.filter(dostepnosc=True).exclude(serwisy__isnull=False)
+    #lista_akcesoriow = Akcesoria.objects.all()
+
+    # Stan magazynowy akcesoriów:
+
+    lista_akcesoriow = Akcesoria.objects.annotate( # Sumowanie akcesoriów ze sklepów.
+        suma_wszystkich=Sum('stany_magazynowe__ilosc')
+    )
+    def get_dostepnosc_w_sklepie(self, sklep):
+        stan = self.stany_magazynowe.filter(sklep=sklep).first()
+        return stan.ilosc if stan else 0
 
     if q:
         lista_rowerow = lista_rowerow.filter(marka__icontains=q)
@@ -180,9 +190,13 @@ def kasa(request):
             return redirect('wypozyczalnia:koszyk')
         
         except ValidationError as e:
-            messages.error(request, f"Błąd: {e.message_dict}")
+            if hasattr(e, 'message_dict'):
+                errors = e.message_dict
+            else:
+                errors = e.messages
+            messages.error(request, f"Błąd: {errors}")
             return redirect('wypozyczalnia:koszyk')
-
+        
 @login_required
 def moje_zamowienia(request):
     if not hasattr(request.user, 'klient_profil'):
